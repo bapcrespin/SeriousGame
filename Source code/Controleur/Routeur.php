@@ -11,7 +11,7 @@ class Routeur {
 			// on détermine avec quelle entité on veut travailler
 			switch($_GET['entite']) {
 				case 'inscription' : 
-					$ctrlUser = new ControleurUtilisateur);
+					$ctrlUser = new ControleurUtilisateur();
 					$ctrlUser->();
 					break;
 					
