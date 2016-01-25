@@ -5,15 +5,13 @@ class Utilisateurs {
 	private $avatar;
 	private $scoreTotal;
 	private $mail;
-
-    public function __construct($idUser, $mdp) {
-        $this->idUser = $idUser;
-        $this->mdp = $mdp;
-		$this->avatar = "avatar-".$idUser.".png";
-		$this->scoreTotal = 0;
-    }
 	
-	public function __construct($idUser, $mdp, $mail) {
+	private function __construct(){
+
+    }
+
+
+	public function __construct_1($idUser, $mdp, $mail) {
         $this->idUser = $idUser;
         $this->mdp = $mdp;
 		$this->avatar = "avatar-".$idUser.".png";
@@ -21,7 +19,7 @@ class Utilisateurs {
 		$this->scoreTotal = 0;
     }
 	
-	public function __construct($idUser, $mdp, $avatar, $scoreTotal, $mail) {
+	public function __construct_all($idUser, $mdp, $avatar, $scoreTotal, $mail) {
         $this->idUser = $idUser;
         $this->mdp = $mdp;
 		$this->avatar = $avatar;

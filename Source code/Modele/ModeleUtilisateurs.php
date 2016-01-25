@@ -29,7 +29,7 @@ class ModeleCategorie {
 		$res = $conn->prepare("Select * from Utilisateurs");
 		$res->execute();			
 		foreach($res as $uti) {
-		    $ListeUti[] = new Utilisateurs($uti["idUti"], $uti["mdp"], $uti["avatar"], $uti["scoreTotal"], $uti["mail"]);
+		    $ListeUti[] = Utilisateurs::__construct_all($uti["idUti"], $uti["mdp"], $uti["avatar"], $uti["scoreTotal"], $uti["mail"]);
  		}
 		return $ListeUti; 
     }
@@ -48,8 +48,9 @@ class ModeleCategorie {
 		$res = $conn->prepare("Select * from Utilisateurs where idUti = :pIdUti");
 		$res->execute(array('pIdUti' => $idUti));
 		$uti = $res->fetch();
-		$unUtilisateur = new Utilisateurs($uti["idUti"], $uti["mdp"], $uti["avatar"], $uti["scoreTotal"], $uti["mail"]);
+		$unUtilisateur = Utilisateurs::__construct_all($uti["idUti"], $uti["mdp"], $uti["avatar"], $uti["scoreTotal"], $uti["mail"]);
         return $unUtilisateur;
-    }	
+    }
+
 }
 ?>
