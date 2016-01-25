@@ -53,7 +53,7 @@
                 echo '  <input type="password" name="motPasse" placeholder="Mot de passe" class="form-control"> &nbsp;';
                 echo '</div>';
                 echo '<button type="submit" name="Envoyer" value="Valider" class="btn btn-success">Se connecter</button> ';
-                echo '<a href="inscription.php"><button type="button" class="btn btn-primary">S\'inscrire</button></a>';
+                echo '<a href="index.php?entite=inscription"><button type="button" class="btn btn-primary">S\'inscrire</button></a>';
               }
             ?>
           </form>
