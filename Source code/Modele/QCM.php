@@ -1,17 +1,15 @@
 <?php
 class QCM {
-    private $idQcm;
+    private $niveau;
 	private $temps;
-	private $bonus;
 	private $valider;
 	private $url;
 	private $nom;
 	
 	
-    public function __construct($pIdQcm, $pTemps, $pUrl, $pBonus, $pNom) {
-        $this->idQcm = $pIdQcm;
+    public function __construct($pNom, $niveau, $pUrl, $pTemps) {
+        $this->niveau = $niveau;
         $this->temps = $pTemps;
-		$this->bonus = $pBonus;
 		$this->url = $pUrl;
 		$this->valider = 0;
 		$this->nom = $pNom;
@@ -63,31 +61,7 @@ class QCM {
 
         return $this;
     }
-
-    /**
-     * Gets the value of bonus.
-     *
-     * @return mixed
-     */
-    public function getBonus()
-    {
-        return $this->bonus;
-    }
-
-    /**
-     * Sets the value of bonus.
-     *
-     * @param mixed $bonus the bonus
-     *
-     * @return self
-     */
-    public function setBonus($bonus)
-    {
-        $this->bonus = $bonus;
-
-        return $this;
-    }
-
+    
     /**
      * Gets the value of valider.
      *
@@ -156,6 +130,30 @@ class QCM {
     public function setNom($nom)
     {
         $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of niveau.
+     *
+     * @return mixed
+     */
+    public function getNiveau()
+    {
+        return $this->niveau;
+    }
+
+    /**
+     * Sets the value of niveau.
+     *
+     * @param mixed $niveau the niveau
+     *
+     * @return self
+     */
+    public function setNiveau($niveau)
+    {
+        $this->niveau = $niveau;
 
         return $this;
     }

@@ -5,9 +5,8 @@ class Questions {
 	private $question;
 	private $idReponse;
 	private $conteur;
-	private $scoreQCM;
 	
-	public function __construct($idQuestion, $idQcm, $question, $idReponse, $conteur, $scoreQCM) {
+	public function __construct($idQuestion, $idQcm, $question, $idReponse, $conteur) {
         $this->idQuestion = $idQuestion;
         $this->idQcm = $idQcm;
 		$this->question = $question;
@@ -131,30 +130,6 @@ class Questions {
     public function setConteur($conteur)
     {
         $this->conteur = $conteur;
-
-        return $this;
-    }
-
-    /**
-     * Gets the value of scoreQCM.
-     *
-     * @return mixed
-     */
-    public function getScoreQCM()
-    {
-        return $this->scoreQCM;
-    }
-
-    /**
-     * Sets the value of scoreQCM.
-     *
-     * @param mixed $scoreQCM the score q c m
-     *
-     * @return self
-     */
-    public function setScoreQCM($scoreQCM)
-    {
-        $this->scoreQCM = $scoreQCM;
 
         return $this;
     }
