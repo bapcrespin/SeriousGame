@@ -9,7 +9,6 @@ class Utilisateurs {
 
     }
 
-
 	public function __construct_1($mail, $mdp) {
         $this->mail = $mail;
         $this->mdp = $mdp;
@@ -18,7 +17,7 @@ class Utilisateurs {
     }
 	
 	public function __construct_all($mail, $mdp, $avatar, $scoreTotal) {
-        $this->mail = $ma
+        $this->mail = $mail;
         $this->mdp = $mdp;
 		$this->avatar = $avatar;
 		$this->scoreTotal = $scoreTotal;

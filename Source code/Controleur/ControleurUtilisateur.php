@@ -5,7 +5,7 @@ class ControleurUtilisateur {
     private $modeleUti;
 	
     public function __construct() {
-          $this->modeleUti = new ModeleUtilisateurs();
+          $this->modeleUti = new ModeleUtilisateur();
     }
 	
 	public function getListeUtilisateurs() {
@@ -19,8 +19,12 @@ class ControleurUtilisateur {
         include 'Vue/VueUtilisateurs.php';
     }
 
+    public function inscription() {
+        include ('./Vue/VueInscription.php');
+    }
+
     public function creerUtilisateur($mail, $mdp) {
-        include 'Vue/VueInscription.php';
+        include ('./Vue/VueInscription.php');
         $vCreerUti = $this->modeleUti->creerUtilisateur($mail, $mdp);
     }
 	   

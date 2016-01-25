@@ -21,7 +21,7 @@ class ModeleUtilisateur {
 	}
 	
 	public function incrementerScoreTotal($score){
-		this.scoreTotal= this.scoreTotal + $score;
+		//this.scoreTotal = this.scoreTotal + $score ;
 	}
 	
 	public function getListeUtilisateurs() {
@@ -36,7 +36,7 @@ class ModeleUtilisateur {
 
 	public function creerUtilisateur($mail, $mdp) {
 		global $conn;
-		$res = $conn->prepare("INSERT INTO table Utilisateurs VALUES(':mail', ':mdp','',0)");
+		$res = $conn->prepare("INSERT INTO Utilisateurs VALUES(':mail', ':mdp','',0)");
 		$res ->bindParam(':mdp', $idUti);
 		$res ->bindParam(':mail', $mail);
 		$res->execute();
