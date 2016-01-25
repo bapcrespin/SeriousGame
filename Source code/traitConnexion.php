@@ -1,5 +1,4 @@
 <?php
-	include_once("./Modele/ModeleUtilisateur.php");
 	include_once("./include/connect.inc.php");
 	
 	global $conn;
