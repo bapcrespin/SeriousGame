@@ -12,7 +12,7 @@ class Routeur {
 			switch($_GET['entite']) {
 				case 'inscription' : 
 					$ctrlUser = new ControleurUtilisateur();
-					$ctrlUser->();
+					$ctrlUser-> creerUtilisateur($_POST['email'], $_POST['password']);
 					break;
 					
 				default: 	// pour toutes les autres valeurs du parametre 'entite' 
