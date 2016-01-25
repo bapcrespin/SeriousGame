@@ -3,34 +3,21 @@ include_once("QCM.php");
 include_once("./include/connect.inc.php");
 
 class ModeleCategorie {
-    
-	public function getId(){
-		return this.idQcm;
-	}
 	
-	public function getTemps(){
-		return this.temps;
-	}
-	
-	public function getBonus(){
-		return this.bonus;
-	}
-	
-	public function getValider(){
-		return this.valider;
-	}
-	
-	public function incrementerScoreTotal($score){
-		this.scoreTotal= this.scoreTotal + $score;
-	}
-	
-    public function getQcm($idQcm) {
+    public function getQcm($pIdQcm) {
 		global $conn;
 		$res = $conn->prepare("Select * from QCM where idQcm = :pIdQcm");
-		$res->execute(array('pIdQcm' => $idQcm));
+		$res->execute(array('pIdQcm' => $pIdQcm));
 		$qcm = $res->fetch();
 		$unQcm = new QCM($qcm["idQcm"], $qcm["temps"], $qcm["bonus"], $qcm["valider"], $qcm["url"]);
         return $unQCM;
-    }	
+    }
+
+    public function ajouterQcm($pIdQcm, $pTemps, $pUrl, $pBonus, $pNom) {
+    	global $conn;
+    	$res = $conn->prepare("Insert into Qcm values(:pIdQcm, :pTemps, :pBonus, 0, :pNom)");
+    	$res->execute(array("pIdQcm" => $pIdQcm, "pTemps" => $pTemps, "pBonus" => $pBonus, "pNom" => $pNom));
+    }
+
 }
 ?>
