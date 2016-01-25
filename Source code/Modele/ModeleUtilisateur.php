@@ -36,9 +36,7 @@ class ModeleUtilisateur {
 
 	public function creerUtilisateur($mail, $mdp) {
 		global $conn;
-		$res = $conn->prepare("INSERT INTO Utilisateurs VALUES(':mail', ':mdp','',0)");
-		$res ->bindParam(':mdp', $idUti);
-		$res ->bindParam(':mail', $mail);
+		$res = $conn->prepare("INSERT INTO Utilisateurs VALUES('".$mail."', '".$mdp."','',0)");
 		$res->execute();
 	}
 	
