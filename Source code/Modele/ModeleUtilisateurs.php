@@ -4,6 +4,26 @@ include_once("./include/connect.inc.php");
 
 class ModeleCategorie {
     
+	public function getId(){
+		return this.idUser;
+	}
+	
+	public function getmdp(){
+		return this.mdp;
+	}
+	
+	public function getScoreTotal(){
+		return this.scoreTotal;
+	}
+	
+	public function getAvatar(){
+		return this.avatar;
+	}
+	
+	public function incrementerScoreTotal($score){
+		this.scoreTotal= this.scoreTotal + $score;
+	}
+	
 	public function getListeUtilisateurs() {
 		global $conn;
 		$res = $conn->prepare("Select * from Utilisateurs");
@@ -13,6 +33,15 @@ class ModeleCategorie {
  		}
 		return $ListeUti; 
     }
+	
+	public function creerUtilisateur($idUti, $mdp, $mail) {
+		global $conn;
+		$res = $conn->prepare("INSERT INTO table Utilisateurs VALUES(':idEtu', ':mdp','',0,':mail')");
+		$res ->bindParam(':idUti', $idUti);
+		$res ->bindParam(':mdp', $idUti);
+		$res ->bindParam(':mail', $mail);
+		$res->execute();
+	}
 	
     public function getUtilisateur($idUti) {
 		global $conn;

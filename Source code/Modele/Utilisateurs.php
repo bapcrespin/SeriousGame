@@ -1,10 +1,10 @@
 <?php
 class Utilisateurs {
-    public $idUser;
-    public $mdp;
-	public $avatar;
-	public $scoreTotal;
-	public $mail;
+    private $idUser;
+    private $mdp;
+	private $avatar;
+	private $scoreTotal;
+	private $mail;
 
     public function __construct($idUser, $mdp) {
         $this->idUser = $idUser;
@@ -21,6 +21,12 @@ class Utilisateurs {
 		$this->scoreTotal = 0;
     }
 	
-	
+	public function __construct($idUser, $mdp, $avatar, $scoreTotal, $mail) {
+        $this->idUser = $idUser;
+        $this->mdp = $mdp;
+		$this->avatar = $avatar;
+		$this->mail = $mail;
+		$this->scoreTotal = $scoreTotal;
+    }
 }
 ?>
