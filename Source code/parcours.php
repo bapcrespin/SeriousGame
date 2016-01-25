@@ -1,10 +1,3 @@
-<?php
-  session_start();
-  if(!isset($_SESSION['identifie'])) {
-    header('location:inscription.php');
-  } 
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
   <head>
