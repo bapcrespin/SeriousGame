@@ -23,10 +23,20 @@ class ControleurUtilisateur {
         include ('./Vue/VueInscription.php');
     }
 
-    public function creerUtilisateur($mail, $mdp) {
+    public function creerUtilisateur($mail, $mdp, $mdp2) {
         include ('./Vue/VueInscription.php');
-        $vCreerUti = $this->modeleUti->creerUtilisateur($mail, $mdp);
+        if (preg_match("*@*", $mail)) {
+            if (strcmp($mdp, $mdp2) == 0 ){
+                $vCreerUti = $this->modeleUti->creerUtilisateur($mail, $mdp);
+                header('location:index.php');
+            } else {
+                echo "<br/><h4>Les mots de passe de correspondent pas.</h4>";
+            }
+        } else {
+            echo "<br/><h4>L'adresse mail est invalide.</h4>";
+        }
+        
+        
     }
-	   
 }
 ?>

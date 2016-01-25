@@ -14,7 +14,7 @@ class Routeur {
 					break;
 				case 'inscriptionOK' : 
 					$ctrlUser = new ControleurUtilisateur();
-					$ctrlUser->creerUtilisateur($_POST['email'], $_POST['password']);
+					$ctrlUser->creerUtilisateur($_POST['email'], $_POST['password'], $_POST['vpassword']);
 					break;	
 					
 				default: 	// pour toutes les autres valeurs du parametre 'entite' 
