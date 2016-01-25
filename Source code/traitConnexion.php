@@ -1,17 +1,20 @@
 <?php
 
-//Si les identifiants sont corrects, on redirige vers l'index
-//Sinon, on redirige vers formConnexion.php
-if (isset($_POST['login'])&& isset($_POST['motPasse']) && ($_POST['login'] == 'Achille') && ($_POST['motPasse'] == 'Talon')) {
+	global $conn;
+	$res = $conn->prepare('Select * from Utilisateurs where mail = '.$_POST["login"].';');
+	$res->execute();
+	$util = $res->fetch();
 
-	session_start();
-	
-	$_SESSION['identifie'] = 'OK';
-	
-	header('location:index.php');
-	
-}else{
-	header('location:index.php');
+	foreach($util as $uti) {
 
-}
-?>
+	    if ( isset($_POST['motPasse']) && ($uti["mdp"] == $_POST['motPasse'])){
+
+	    	session_start();
+	
+			$_SESSION['identifie'] = 'OK';
+			
+			header('location:index.php');
+	    }
+	}
+
+	header('location:index.php');
