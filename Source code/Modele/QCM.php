@@ -1,5 +1,6 @@
 <?php
 class QCM {
+    private $idQcm;
     private $niveau;
 	private $temps;
 	private $valider;
@@ -8,6 +9,7 @@ class QCM {
 	
 	
     public function __construct($pNom, $niveau, $pUrl, $pTemps) {
+        $this->idQcm = null;
         $this->niveau = $niveau;
         $this->temps = $pTemps;
 		$this->url = $pUrl;

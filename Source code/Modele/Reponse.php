@@ -3,11 +3,13 @@
 		private $idReponse;
 		private $reponse;
 		private $idQuestion;
+		private $correct;
 
-		public function __construct($pIdReponse, $pIdQuestion, $pReponse) {
-			$idReponse = $pIdReponse;
+		public function __construct($pIdQuestion, $pReponse) {
+			$idReponse = null;
 			$idQuestion = $pIdQuestion;
 			$reponse = $pReponse;
+			$correct = 0;
 		}
 	
    
@@ -83,5 +85,29 @@
 
 	        return $this;
 	    }
-	}
+	
+    /**
+     * Gets the value of correct.
+     *
+     * @return mixed
+     */
+    public function getCorrect()
+    {
+        return $this->correct;
+    }
+
+    /**
+     * Sets the value of correct.
+     *
+     * @param mixed $correct the correct
+     *
+     * @return self
+     */
+    public function setCorrect($correct)
+    {
+        $this->correct = $correct;
+
+        return $this;
+    }
+}
 ?>

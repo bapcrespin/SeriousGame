@@ -22,5 +22,11 @@
 			$uneReponse = new Reponse($rep["idReponse"], $rep["idQuestion"], $rep["reponse"]);
 	        return $uneReponse;
 		}
+
+		public function ajouterReponse($pIdQuestion, $pReponse) {
+			global $conn;
+			$res = $conn->prepare("Insert into (idQuestion, reponse) values (:pIdQuestion, :pReponse)");
+			$res->execute(array( ':pIdQuestion' => $idQuestion, 'pReponse' => $pReponse));
+		}
 	}
 ?>

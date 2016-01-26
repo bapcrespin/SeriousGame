@@ -3,15 +3,15 @@ class Questions {
     private $idQuestion;
     private $idQcm;
 	private $question;
-	private $idReponse;
 	private $conteur;
+    private $bonus;
 	
-	public function __construct($idQuestion, $idQcm, $question, $idReponse, $conteur) {
-        $this->idQuestion = $idQuestion;
+	public function __construct($idQcm, $question) {
+        $this->idQuestion = null;
         $this->idQcm = $idQcm;
 		$this->question = $question;
-		$this->idReponse = $idReponse;
 		$this->conteur = 0;
+        $this->bonus = 0;
     }
 
     /**
@@ -87,30 +87,6 @@ class Questions {
     }
 
     /**
-     * Gets the value of idReponse.
-     *
-     * @return mixed
-     */
-    public function getIdReponse()
-    {
-        return $this->idReponse;
-    }
-
-    /**
-     * Sets the value of idReponse.
-     *
-     * @param mixed $idReponse the id reponse
-     *
-     * @return self
-     */
-    public function setIdReponse($idReponse)
-    {
-        $this->idReponse = $idReponse;
-
-        return $this;
-    }
-
-    /**
      * Gets the value of conteur.
      *
      * @return mixed
@@ -130,6 +106,30 @@ class Questions {
     public function setConteur($conteur)
     {
         $this->conteur = $conteur;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of bonus.
+     *
+     * @return mixed
+     */
+    public function getBonus()
+    {
+        return $this->bonus;
+    }
+
+    /**
+     * Sets the value of bonus.
+     *
+     * @param mixed $bonus the bonus
+     *
+     * @return self
+     */
+    public function setBonus($bonus)
+    {
+        $this->bonus = $bonus;
 
         return $this;
     }
