@@ -24,13 +24,11 @@
     <div class="jumbotron">
       <div class="container">
       </br></br>
-        <h1>Profil</h1>			
+        <h1><div class="p2">Profil</div></h1>			
       </div>
     </div>
 
    <div class="container">
-    <h1>Mon profil </h1>
-    <hr>
   <div class="center">
   <div class="row">
   <div class="col-sm-6 col-md-4">
