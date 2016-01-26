@@ -14,12 +14,12 @@
 			return $listeReponses;
 		}
 
-		public function getReponse($pIdReponse) {
+		public function getReponse($nom) {
 			global $conn;
-			$res = $conn->prepare("Select * from Reponses where idReponse = :pIdReponse");
-			$res->execute(array('pIdReponse' => $idReponse));
+			$res = $conn->prepare("Select * from Reponses where reponse = :pReponse");
+			$res->execute(array('pReponse' => $nom));
 			$rep = $res->fetch();
-			$uneReponse = new Reponse($rep["idReponse"], $rep["idQuestion"], $rep["reponse"]);
+			$uneReponse = new Reponse($rep["idQuestion"], $rep["reponse"]);
 	        return $uneReponse;
 		}
 

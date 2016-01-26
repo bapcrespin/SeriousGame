@@ -91,7 +91,7 @@
      *
      * @return mixed
      */
-    public function getCorrect()
+    public function isCorrect()
     {
         return $this->correct;
     }
