@@ -18,22 +18,14 @@ class Routeur {
 					$ctrlUser->creerUtilisateur($_POST['email'], $_POST['password'], $_POST['vpassword']);
 					break;	
 				case 'qcm':
-					if (isset($_GET['action']) {
+					if (isset($_GET['action'])) {
 						switch($_GET['action']) {
 							case 'C':
-								$nom = $_POST['nom'];
-								$niveau = $_POST['niveau'];
-								$url = $_POST['url'];
-								$temps = $_POST['temps'];
-								$questionBonus = $_POST['question'];
-								$reponse1 = $_POST['reponse1'];
-								$reponse2 = $_POST['reponse2'];
-								$reponse3 = $_POST['reponse3'];
-								$reponse4 = $_POST['reponse4'];
-								$reponse5 = $_POST['reponse5'];
-								$bonneReponse = $_POST['idReponse'];
 								$ctrlQcm = new ControleurQcm();
-								$ctrlQcm->ajouterQcm($niveau, $temps, $url, $nom, $questionBonus, $reponse1, $reponse2, $reponse3, $reponse4, $reponse5, $bonneReponse);
+								$ctrlQcm->ajouterQcmForm();
+								if (isset($_POST['envoyer'])) {
+									$ctrlQcm->ajouterQcm($_POST['niveau'], $_POST['temps'], $_POST['url'], $_POST['nom'], $_POST['question'], $_POST['reponse1'], $_POST['reponse2'], $_POST['reponse3'], $_POST['reponse4'], $_POST['reponse5'], $_POST['idReponse']);
+									}
 								break;
 						}
 					}

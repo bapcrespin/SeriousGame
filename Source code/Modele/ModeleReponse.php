@@ -1,6 +1,6 @@
 <?php
 	include_once("Reponse.php");
-	include_once("../include/connect.inc.php");
+	include_once("./include/connect.inc.php");
 
 	class ModeleReponse {
 

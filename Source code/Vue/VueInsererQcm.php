@@ -1,10 +1,4 @@
-<html>
-<head>
-  <meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<title>Inserer un QCM</title>
-</head>
-<body>
+<div class="container">
 <!-- Single button -->
 </br>
 <div class="input-group col-md-8 col-md-offset-2">
@@ -100,5 +94,5 @@ Création d'un QCM...
    <button type="submit" class="btn btn-default" name="envoyer">Enregistrer</button>
   </div>
 </form>
-</body>
-</html>
+</br>
+
