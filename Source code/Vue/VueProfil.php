@@ -12,11 +12,14 @@
     <title>Serious Game</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
-    <link href="./css/style.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 
   </head>
 
+<?php
+  include('../include/header.php');
+  ?>
 <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
@@ -42,3 +45,6 @@
   </div>
   </div>
 </div>
+<?php
+  include('../include/footer.php');
+  ?>
