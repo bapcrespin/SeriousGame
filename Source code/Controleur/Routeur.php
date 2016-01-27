@@ -16,7 +16,20 @@ class Routeur {
 				case 'inscriptionOK' : 
 					$ctrlUser = new ControleurUtilisateur();
 					$ctrlUser->creerUtilisateur($_POST['email'], $_POST['password'], $_POST['vpassword']);
-					break;	
+					break;
+				case 'profil':
+				if (isset($_GET['action'])) {
+					switch($_GET['action']) {
+						case 'R':
+							$ctrlUser = new ControleurUtilisateur();
+							$ctrlUser->profil();
+							break;
+						case 'U':
+							$ctrlUser = new ControleurUtilisateur();
+							$ctrlUser->Modifprofil();
+							break;
+					}
+				}
 				case 'qcm':
 					if (isset($_GET['action'])) {
 						switch($_GET['action']) {
