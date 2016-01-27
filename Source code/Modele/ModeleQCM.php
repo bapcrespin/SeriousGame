@@ -13,6 +13,17 @@ class ModeleQcm {
         return $unQCM;
     }
 
+    public function getAllQcm() {
+        global $conn;
+        $res = $conn->prepare("Select * from qcm");
+        $res->execute();
+        $listeQcm = null;
+        foreach ($res as $qcm) {
+            $listeQcm[] = new QCM($qcm['nom'], $qcm['niveau'], $qcm['url'], $qcm['temps']);
+        }
+        return $listeQcm;
+    }
+
     public function ajouterQcm($pNiveau, $pTemps, $pUrl, $pNom) {
     	global $conn;
     	$res = $conn->prepare("Insert into Qcm (niveau, temps, nom, url) values(:pNiveau, :pTemps, :pNom, :pUrl)");

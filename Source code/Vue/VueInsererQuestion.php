@@ -1,46 +1,39 @@
-<html>
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<title>Inserer une question</title>
-</head>
-<body>
 </br>
 
 <div class="input-group col-md-8 col-md-offset-2">
 Entrez une question...
 </div>
+<form method="post" action="index.php?entite=question&action=C">
+</br>
+<div class="input-group col-md-8 col-md-offset-2">
+  <span class="input-group-addon">Question</span>
+  <input type="text" class="form-control" placeholder="Ecrire la question..." aria-describedby="basic-addon1" id="nom" name="nom">
+</div>
 
 </br>
 <div class="input-group col-md-8 col-md-offset-2">
-  <span class="input-group-addon" id="basic-addon1">Question</span>
-  <input type="text" class="form-control" placeholder="Ecrire la question..." aria-describedby="basic-addon1">
-</div>
-
-</br>
-<div class="input-group col-md-8 col-md-offset-2">
-  <span class="input-group-addon" id="basic-addon1">Réponse A</span>
-  <input type="text" class="form-control" placeholder="Ecrire une reponse " aria-describedby="basic-addon1">
+  <span class="input-group-addon">Réponse A</span>
+  <input type="text" class="form-control" placeholder="Ecrire une reponse " aria-describedby="basic-addon1" id="reponse1" name="reponse1">
 </div>
 
 <div class="input-group col-md-8 col-md-offset-2">
-  <span class="input-group-addon" id="basic-addon1">Réponse B</span>
-  <input type="text" class="form-control" placeholder="Ecrire une reponse " aria-describedby="basic-addon1">
+  <span class="input-group-addon">Réponse B</span>
+  <input type="text" class="form-control" placeholder="Ecrire une reponse " aria-describedby="basic-addon1" id="reponse2" name="reponse2">
 </div>
 
 <div class="input-group col-md-8 col-md-offset-2">
-  <span class="input-group-addon" id="basic-addon1">Réponse C</span>
-  <input type="text" class="form-control" placeholder="Ecrire une reponse " aria-describedby="basic-addon1">
+  <span class="input-group-addon">Réponse C</span>
+  <input type="text" class="form-control" placeholder="Ecrire une reponse " aria-describedby="basic-addon1" id="reponse3" name="reponse3">
 </div>
 
 <div class="input-group col-md-8 col-md-offset-2">
-  <span class="input-group-addon" id="basic-addon1">Réponse D</span>
-  <input type="text" class="form-control" placeholder="Ecrire une reponse " aria-describedby="basic-addon1">
+  <span class="input-group-addon">Réponse D</span>
+  <input type="text" class="form-control" placeholder="Ecrire une reponse " aria-describedby="basic-addon1" id="reponse4" name="reponse4">
 </div>
 
 <div class="input-group col-md-8 col-md-offset-2">
-  <span class="input-group-addon" id="basic-addon1">Réponse E</span>
-  <input type="text" class="form-control" placeholder="Ecrire une reponse " aria-describedby="basic-addon1">
+  <span class="input-group-addon">Réponse E</span>
+  <input type="text" class="form-control" placeholder="Ecrire une reponse " aria-describedby="basic-addon1" id="reponse5" name="reponse5">
 </div>
 
 </br>
@@ -62,7 +55,9 @@ Parmi les réponses écrites au-dessus, sélectionnez la bonne réponse :
 <div class="input-group col-md-8 col-md-offset-2">
 Sélectionnez dans quel QCM vous souhaitez inscrire la question que vous avez édité au-dessus :   
 <select name="idQcm" id="idQcm" >
-  
+  <?php foreach ($listeQcm as $qcm) {
+    echo '<option value="'.$this->modeleQcm->getIdQcm($qcm->getNom()).'" ?>'.$qcm->getNom().'<option>';
+  } ?>
 </select>
 </div>
 </br>
@@ -71,5 +66,6 @@ Sélectionnez dans quel QCM vous souhaitez inscrire la question que vous avez é
 
 
 <div class="col-md-8 col-md-offset-6">
- <button type="submit" class="btn btn-default">Enregistrer</button>
+ <button type="submit" class="btn btn-default" name="envoyer">Enregistrer</button>
 </div>
+</form>

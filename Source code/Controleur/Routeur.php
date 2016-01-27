@@ -1,6 +1,7 @@
 <?php
 require_once 'Controleur/ControleurUtilisateur.php';
 require_once 'Controleur/ControleurQcm.php';
+require_once 'Controleur/ControleurQuestion.php';
 
 class Routeur {
     // Route une requête entrante : exécution la bonne méthode de contrôleur en fonction de l'URL 
@@ -59,6 +60,20 @@ class Routeur {
 								if (isset($_GET['id'])) {
 									$ctrlQcm = new ControleurQcm();
 									$ctrlQcm->lancerQcm($_GET['id']);
+								}
+								break;
+						}
+					}
+					break;
+				case 'question':
+					if (isset($_GET['action'])) {
+						switch($_GET['action']) {
+							case 'C':
+								$ctrlQuestion = new ControleurQuestion();
+								$ctrlQuestion->ajouterQuestionForm();
+								if (isset($_POST['envoyer'])) {
+									$ctrlQuestion->ajouterQuestion($_POST['idQcm'], $_POST['nom'], $_POST['reponse1'], $_POST['reponse2'], $_POST['reponse3'], $_POST['reponse4'], $_POST['reponse5'], $_POST['idReponse']);
+									echo '<div class="alert alert-success" role="alert">Question ajoutée au qcm</div>';
 								}
 								break;
 						}
