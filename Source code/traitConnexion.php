@@ -7,6 +7,10 @@
 	$uti = $res->fetch();
 	if ( isset($_POST['motPasse']) && ($uti["mdp"] == $_POST['motPasse'])){
 		session_start();
+		$_SESSION['id'] = $uti['mail'];
+		$_SESSION['mdp'] = $uti['mdp'];
+		$_SESSION['avatar'] = $uti['avatar'];
+		$_SESSION['scoreTotal'] = $uti['scoreTotal'];
 		$_SESSION['identifie'] = 'OK';
 		header('location:index.php');
 	} else {
