@@ -341,7 +341,7 @@
     </script>
     <div id="compteur"></div>
     <script language="JavaScript">
-      duree="300";
+      duree="30";
        t();
     </script>
 
