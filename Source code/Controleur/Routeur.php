@@ -26,7 +26,15 @@ class Routeur {
 							break;
 						case 'U':
 							$ctrlUser = new ControleurUtilisateur();
-							$ctrlUser->Modifprofil();
+							$ctrlUser->modifProfilForm();
+							break;
+						case 'Uok':
+						if (strcmp($_POST['mdp'], $_POST['confirm']) == 0 ){
+							$ctrlUser = new ControleurUtilisateur();
+							$ctrlUser->modifProfil($_SESSION['id'], $_POST['mdp']);
+						} else {
+            				echo "<br/><h4>Les mots de passe de correspondent pas.</h4>";
+        				}
 							break;
 					}
 				}
