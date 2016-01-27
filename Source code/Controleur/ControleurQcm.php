@@ -58,5 +58,14 @@
 		public function ajouterQcmForm() {
 			include 'Vue/VueInsererQcm.php';
 		}
+
+		public function lancerVideo($idQcm) {
+			include 'Vue/VueVideo.php';
+		}
+
+		public function lancerQcm($idQcm) {
+			include 'Vue/VueQcm.php';
+		}
+
 	}
  ?>

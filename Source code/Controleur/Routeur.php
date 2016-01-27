@@ -27,6 +27,18 @@ class Routeur {
 									$ctrlQcm->ajouterQcm($_POST['niveau'], $_POST['temps'], $_POST['url'], $_POST['nom'], $_POST['question'], $_POST['reponse1'], $_POST['reponse2'], $_POST['reponse3'], $_POST['reponse4'], $_POST['reponse5'], $_POST['idReponse']);
 									}
 								break;
+							case 'V':
+								if (isset($_GET['id'])) {
+									$ctrlQcm = new ControleurQcm();
+									$ctrlQcm->lancerVideo($_GET['id']);
+								}
+								break;
+							case 'L':
+								if (isset($_GET['id'])) {
+									$ctrlQcm = new ControleurQcm();
+									$ctrlQcm->lancerQcm($_GET['id']);
+								}
+								break;
 						}
 					}
 					break;
