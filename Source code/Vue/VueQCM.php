@@ -3,7 +3,9 @@
     <div class="jumbotron">
       <div class="container">
       </br></br>
-        <h1>QCM</div></h1>			
+        <?php
+          echo '<h1>QCM : '.$nomQcm.'</h1>';
+        ?>		
       </div>
     </div>
 
@@ -331,7 +333,7 @@
           if(m<10){
             m="0"+m
           }
-          compteur.innerHTML="Il reste :"+h+":"+m+":"+s
+          compteur.innerHTML="Il reste : "+h+":"+m+":"+s
         }
         duree=duree-1;
         window.setTimeout("t();",999);

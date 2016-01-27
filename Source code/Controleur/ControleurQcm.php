@@ -66,6 +66,7 @@
 		}
 
 		public function lancerQcm($idQcm) {
+			$nomQcm = $this->modeleQcm->getNomQcm($idQcm);
 			include 'Vue/VueQcm.php';
 		}
 
