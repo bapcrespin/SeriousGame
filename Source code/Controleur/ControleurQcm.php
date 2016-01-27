@@ -60,6 +60,8 @@
 		}
 
 		public function lancerVideo($idQcm) {
+			$nomQcm = $this->modeleQcm->getNomQcm($idQcm);
+			$codeVideo = $this->modeleQcm->getCodeVideoQcm($idQcm);
 			include 'Vue/VueVideo.php';
 		}
 

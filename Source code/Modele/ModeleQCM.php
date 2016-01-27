@@ -27,5 +27,23 @@ class ModeleQcm {
         return $id["idQcm"];
     }
 
+    public function getNomQcm($pIdQcm) {
+        global $conn;
+        $res = $conn->prepare("Select * from Qcm where idQcm = :pIdQcm");
+        $res->execute(array("pIdQcm" => $pIdQcm));
+        $nom = $res->fetch();
+        return $nom["nom"];
+    }
+
+    public function getCodeVideoQcm($pIdQcm) {
+        global $conn;
+        $res = $conn->prepare("Select * from Qcm where idQcm = :pIdQcm");
+        $res->execute(array("pIdQcm" => $pIdQcm));
+        $url = $res->fetch();
+        $codeVideo = $url["url"];
+        $codeVideo = explode('=', $codeVideo)[1];
+        return $codeVideo ;
+    }
+
 }
 ?>
