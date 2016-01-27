@@ -16,15 +16,11 @@
     <link href="../css/style.css" rel="stylesheet">
 
   </head>
-
-<?php
-  include('../include/header.php');
-  ?>
 <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
       </br></br>
-        <h1><div class="p2">Profil</div></h1>			
+        <h1 style ="font-family:'Century Gothic';" >Mon profil</h1>  	
       </div>
     </div>
 
@@ -35,14 +31,14 @@
     <div class="thumbnail">
       <img src="./images/flash.jpeg" alt="...">
       <div class="caption">
-        <h3>nicolas.cellier@gmail.com</h3>
-        <p>45 points</p>
+        <?php
+        echo'<h3>'.$_SESSION['id'].'</h3>';
+        echo'<p>'.$_SESSION['scoreTotal'].' points</p>';
+
+        ?>
         <p><a href="./VueModifProfil.php" class="btn btn-primary" role="button">Modifier le mot de passe</a> <a href="./parcours.php" class="btn btn-default" role="button">Jouer</a></p>
       </div>
     </div>
   </div>
   </div>
 </div>
-<?php
-  include('../include/footer.php');
-  ?>
