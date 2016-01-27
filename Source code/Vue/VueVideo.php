@@ -3,14 +3,14 @@
       <div class="container">
       </br></br>
         <?php
-          echo '<h1>Vidéo : '.$nomQcm.'</h1>';
+          echo '<h1>VidÃ©o : '.$nomQcm.'</h1>';
         ?>
       </div>
     </div>
 
     <div class="container">
       <?php
-        echo '<p>Code Vidéo mes couilles au bords de l\'eau: '.$codeVideo.'</p>';
+        echo '<p>Code VidÃ©o : '.$codeVideo.'</p>';
       ?>
 
      <div>
@@ -27,6 +27,6 @@
 	<div>
 		<br/>
     <?php
-      echo '<a href="index.php?entite=qcm&action=L&id='.$idQcm.'"><button type="button" class="btn btn-success btn-block">Accéder au QCM</button></a>';
+      echo '<a href="index.php?entite=qcm&action=L&id='.$idQcm.'"><button type="button" class="btn btn-success btn-block">AccÃ©der au QCM</button></a>';
     ?>
 	</div>
