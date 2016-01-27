@@ -36,7 +36,7 @@ class ModeleUtilisateur {
 
 	public function creerUtilisateur($mail, $mdp) {
 		global $conn;
-		$res = $conn->prepare("INSERT INTO Utilisateurs VALUES('".$mail."', '".$mdp."','',0)");
+		$res = $conn->prepare("INSERT INTO Utilisateurs VALUES('".$mail."', '".$mdp."','images/default.png',0)");
 		$res->execute();
 	}
 	
@@ -48,6 +48,19 @@ class ModeleUtilisateur {
 		$unUtilisateur = Utilisateurs::__construct_all($uti["mail"], $uti["mdp"], $uti["avatar"], $uti["scoreTotal"]);
         return $unUtilisateur;
     }
+
+    public function modifMdp($pmail, $pmdp) {
+	    global $conn;
+
+	    $res = $conn->prepare("Update Utilisateurs set mdp = '".$pmdp ."' where mail='".$pmail."';");
+	    $res->execute();
+	}
+
+	public function modifAvatar($pmail, $pavatar) {
+	    global $conn;
+	    $res = $conn->prepare("Select Utilisateurs set avatar = :pavatar where mail = :pmail");
+	    $res->execute(array('pmail' => $pmail, 'pavatar' => $pavatar));
+	}
 
 }
 ?>
