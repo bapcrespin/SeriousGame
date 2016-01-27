@@ -9,3 +9,8 @@
 .marge {
 	margin-bottom: 1cm;
 }
+
+@font-face {
+	font-family: "Caviar";
+	src:url('../fonts/CaviarDreams.ttf');
+}

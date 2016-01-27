@@ -2,7 +2,7 @@
     <div class="jumbotron">
       <div class="container">
       </br></br>
-        <h1>BIENVENUE</h1>			
+        <h1 style ="font-family:'Century Gothic';" >Bienvenue</h1>			
       </div>
     </div>
 
