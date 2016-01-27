@@ -40,7 +40,7 @@
           <form class="navbar-form navbar-right" method="post" action="traitConnexion.php">
             <?php
               if(isset($_SESSION['identifie']) && ($_SESSION['identifie'] = 'OK')) {
-                echo '<a href="Vue/VueProfil.php"><button type="button" class="btn btn-info">Mon profil</button></a> &nbsp';
+                echo '<a href="index.php?entite=profil&action=R"><button type="button" class="btn btn-info">Mon profil</button></a> &nbsp';
                 echo '<a href="deconnexion.php"><button type="button" class="btn btn-danger">Se déconnecter</button></a>';
               } else {
                 echo '<div class="form-group">';
