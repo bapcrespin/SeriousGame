@@ -23,6 +23,10 @@ class ControleurUtilisateur {
         include ('./Vue/VueInscription.php');
     }
 
+    public function profil() {
+        include ('./Vue/VueProfil.php');
+    }
+
     public function creerUtilisateur($mail, $mdp, $mdp2) {
         include ('./Vue/VueInscription.php');
         if (preg_match("*@*", $mail)) {
