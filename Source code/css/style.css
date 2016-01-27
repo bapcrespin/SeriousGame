@@ -10,6 +10,10 @@
 	margin-bottom: 1cm;
 }
 
+.alert {
+	margin-top: 1cm;
+}
+
 @font-face {
 	font-family: "Caviar";
 	src:url('../fonts/CaviarDreams.ttf');

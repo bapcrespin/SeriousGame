@@ -18,6 +18,7 @@
 			$this->modeleQcm->ajouterQcm($niveauQcm, $tempsQcm, $urlQcm, $nomQcm);
 			$idQcm = $this->modeleQcm->getIdQcm($nomQcm);
 			$this->modeleQuestions->ajouterQuestion($idQcm, $nomQuestion);
+			$this->modeleQuestions->setBonus($this->modeleQuestions->getIdQuestion($nomQuestion));
 			// on vérifie si la reponse est vide si non on cree un objet question
 			if ($reponse1 <> null) {
 				$this->modeleReponse->ajouterReponse($this->modeleQuestions->getIdQuestion($nomQuestion), $reponse1);
@@ -37,20 +38,20 @@
 
 			// mettre quelle reponse est correct
 			if ($idReponseJuste == 1) {
-				$rep = $this->modeleReponse->getReponse($reponse1);
-				$rep->setCorrect(1);
+				$rep = $this->modeleReponse->getIdReponse($reponse1);
+				$this->modeleReponse->setCorrect($rep);
 			} else if ($idReponseJuste == 2) {
-				$rep = $this->modeleReponse->getReponse($reponse2);
-				$rep->setCorrect(1);
+				$rep = $this->modeleReponse->getIdReponse($reponse2);
+				$this->modeleReponse->setCorrect($rep);
 			} else if ($idReponseJuste == 3) {
-				$rep = $this->modeleReponse->getReponse($reponse3);
-				$rep->setCorrect(1);
+				$rep = $this->modeleReponse->getIdReponse($reponse3);
+				$this->modeleReponse->setCorrect($rep);
 			} else if ($idReponseJuste == 4) {
-				$rep = $this->modeleReponse->getReponse($reponse4);
-				$rep->setCorrect(1);
+				$rep = $this->modeleReponse->getIdReponse($reponse4);
+				$this->modeleReponse->setCorrect($rep);
 			} else if ($idReponseJuste == 5) {
-				$rep = $this->modeleReponse->getReponse($reponse5);
-				$rep->setCorrect(1);
+				$rep = $this->modeleReponse->getIdReponse($reponse5);
+				$this->modeleReponse->setCorrect($rep);
 			}
 			
 		}

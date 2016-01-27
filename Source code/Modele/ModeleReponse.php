@@ -23,10 +23,24 @@
 	        return $uneReponse;
 		}
 
+		public function getIdReponse($nom) {
+			global $conn;
+			$res = $conn->prepare("Select * from Reponses where reponse = :pReponse");
+			$res->execute(array('pReponse' => $nom));
+			$rep = $res->fetch();
+			return $rep['idReponse'];
+		}
+
 		public function ajouterReponse($pIdQuestion, $pReponse) {
 			global $conn;
 			$res = $conn->prepare("Insert into Reponses (idQuestion, reponse) values (:pIdQuestion, :pReponse)");
 			$res->execute(array( ':pIdQuestion' => $pIdQuestion, 'pReponse' => $pReponse));
+		}
+
+		public function setCorrect($idReponse) {
+			global $conn;
+			$res = $conn->prepare("Update Reponses set correct = 1 where idReponse = :pIdReponse");
+			$res->execute(array('pIdReponse' => $idReponse));
 		}
 	}
 ?>

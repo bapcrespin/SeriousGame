@@ -38,6 +38,7 @@ class Routeur {
 								$ctrlQcm->ajouterQcmForm();
 								if (isset($_POST['envoyer'])) {
 									$ctrlQcm->ajouterQcm($_POST['niveau'], $_POST['temps'], $_POST['url'], $_POST['nom'], $_POST['question'], $_POST['reponse1'], $_POST['reponse2'], $_POST['reponse3'], $_POST['reponse4'], $_POST['reponse5'], $_POST['idReponse']);
+									echo '<div class="alert alert-success" role="alert">Qcm ajouté</div>';
 									}
 								break;
 							case 'V':
