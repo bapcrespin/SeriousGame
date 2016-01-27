@@ -17,13 +17,13 @@ class ModeleQuestions {
 	public function ajouterQuestion($idQcm, $question) {
 		global $conn;
 		$res = $conn->prepare("Insert into Questions (idQcm, question) values(:pIdQcm, :pNomQuestion)");
-		$conn->execute(array("pIdQcm" => $idQcm, "pNomQuestion" => $question));
+		$res->execute(array("pIdQcm" => $idQcm, "pNomQuestion" => $question));
 	}
 
 	public function getIdQuestion($nom) {
 		global $conn;
 		$res = $conn->prepare("Select * from Questions where question = :pNom");
-		$res->prepare(array('pNom' => $nom));
+		$res->execute(array('pNom' => $nom));
 		$q = $res->fetch();
 		return $q['idQuestion'];
 	}

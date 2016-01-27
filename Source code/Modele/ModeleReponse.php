@@ -25,8 +25,8 @@
 
 		public function ajouterReponse($pIdQuestion, $pReponse) {
 			global $conn;
-			$res = $conn->prepare("Insert into (idQuestion, reponse) values (:pIdQuestion, :pReponse)");
-			$res->execute(array( ':pIdQuestion' => $idQuestion, 'pReponse' => $pReponse));
+			$res = $conn->prepare("Insert into Reponses (idQuestion, reponse) values (:pIdQuestion, :pReponse)");
+			$res->execute(array( ':pIdQuestion' => $pIdQuestion, 'pReponse' => $pReponse));
 		}
 	}
 ?>
