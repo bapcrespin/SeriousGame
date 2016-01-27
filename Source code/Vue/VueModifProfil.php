@@ -14,9 +14,6 @@
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-<?php
-  include('../include/header.php');
-  ?>
   </head>
 <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
@@ -43,31 +40,35 @@
       <!-- edit form column -->
       <div class="col-md-9 personal-info">
         <h3>Modifier le mot de passe</h3> 
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal" role="form" method="post" action="index.php?entite=profil&action=Uok">
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" placeholder="Disabled input" disabled="disabled" value="tristan@cabantous.com">
+              <?php 
+                echo'<input class="form-control" type="text" placeholder="Disabled input" disabled="disabled" value="'.$_SESSION['id'].'">'; 
+              ?>
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Mot de passe:</label>
             <div class="col-md-8">
-              <input class="form-control" type="password" value="11111122333">
+              <?php
+                echo'<input type="password" name="mdp" id="mdp"/>'; 
+              ?>
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Confirmer le mot de passe:</label>
             <div class="col-md-8">
-              <input class="form-control" type="password" value="11111122333">
+              <?php echo'<input type="password" name="confirm" id="confirm"/>'; ?>
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
-              <input type="button" class="btn btn-primary" value="Changer le mot de passe">
+              <button class="btn btn-primary" type="submit" name ="modifier">Modifier</button>
               <span></span>
-              <a href="./VueProfil.php" class="btn btn-default" role="button">Annuler</a>
+              <a href="index.php?entite=profil&action=R" class="btn btn-default" role="button">Annuler</a>
             </div>
           </div>
         </form>
@@ -75,6 +76,3 @@
   </div>
 </div>
 <hr>
-<?php
-  include('../include/footer.php');
-  ?>

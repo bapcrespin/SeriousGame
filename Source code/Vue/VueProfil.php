@@ -29,14 +29,15 @@
   <div class="row">
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-      <img src="./images/flash.jpeg" alt="...">
-      <div class="caption">
-        <?php
-        echo'<h3>'.$_SESSION['id'].'</h3>';
-        echo'<p>'.$_SESSION['scoreTotal'].' points</p>';
-
-        ?>
-        <p><a href="./VueModifProfil.php" class="btn btn-primary" role="button">Modifier le mot de passe</a> <a href="./parcours.php" class="btn btn-default" role="button">Jouer</a></p>
+<?php
+      echo'<img src="'.$_SESSION['avatar'].'" alt="...">';
+      echo'<div class="caption">';
+      echo'<div text = center>';
+      echo'<h3>'.$_SESSION['id'].'</h3>';
+      echo'<p>'.$_SESSION['scoreTotal'].' points</p>';
+      echo'</div>';
+?>
+        <p><a href="index.php?entite=profil&action=U" class="btn btn-primary" role="button">Modifier le mot de passe</a> <a href="./parcours.php" class="btn btn-default" role="button">Jouer</a></p>
       </div>
     </div>
   </div>
