@@ -27,6 +27,18 @@ class ControleurUtilisateur {
         include ('./Vue/VueProfil.php');
     }
 
+    public function modifProfilForm() {
+        include ('./Vue/VueModifProfil.php');
+    }
+
+    public function modifProfil($mail,$mdp) {
+        
+            $vUtiMdp = $this->modeleUti->modifMdp($mail, $mdp);
+            //$vUtiAvatar = $this->modeleUti->modifAvatar($mail);
+        
+         include ('./Vue/VueProfil.php');
+    }
+
     public function creerUtilisateur($mail, $mdp, $mdp2) {
         include ('./Vue/VueInscription.php');
         if (preg_match("*@*", $mail)) {
