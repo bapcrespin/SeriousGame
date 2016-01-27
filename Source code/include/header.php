@@ -34,7 +34,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <p><a class="navbar-brand white-text" href="index.php">Serious Game EsProd</a></p>
+          <p><a class="navbar-brand white-text" href="index.php?entite=qcm&action=V&id=1">Serious Game EsProd</a></p>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" method="post" action="traitConnexion.php">
@@ -57,4 +57,4 @@
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-    <!---<div class="marge"></div>-->
+    <!--<div class="marge"></div>-->
