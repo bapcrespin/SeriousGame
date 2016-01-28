@@ -71,16 +71,7 @@ class Routeur {
 							case 'R':
 								include 'Vue/VueResultatQcm.php';
 								break;
-<<<<<<< .mine							case 'LB':
-								if (isset($_GET['id'])) {
-									$ctrlQcm = new ControleurQcm();
-									$ctrlQcm->lancerQcmBonus($_GET['id']);
-								}
-								break;
-=======							case 'R':
-								include 'Vue/VueResultatQcm.php';
-								break;
->>>>>>> .theirs						}
+						}
 					}
 					break;
 				case 'question':
