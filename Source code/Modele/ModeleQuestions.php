@@ -31,11 +31,11 @@
 			return $q['idQuestion'];
 		}
 	
-	public function setBonus($idQuestion) {
-		global $conn;
-		$res = $conn->prepare("Update Questions set bonus = 1 where idQuestion = :pIdQuestion");
-		$res->execute(array('pIdQuestion' => $idQuestion));
+		public function setBonus($idQuestion) {
+			global $conn;
+			$res = $conn->prepare("Update Questions set bonus = 1 where idQuestion = :pIdQuestion");
+			$res->execute(array('pIdQuestion' => $idQuestion));
+		}
 	}
-}
 
 ?>
