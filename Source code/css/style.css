@@ -18,3 +18,27 @@
 	font-family: "Caviar";
 	src:url('../fonts/CaviarDreams.ttf');
 }
+
+.barreQCM {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background-color: transparent;
+	left: 65%;
+	z-index: 1;
+}
+
+.vertical {
+  display: inline-block;
+  width: 40%;
+  height: 3%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+  transform: rotate(-90deg);
+}
+
+.jumbotron {
+	position: relative;
+	z-index: 4;
+}
