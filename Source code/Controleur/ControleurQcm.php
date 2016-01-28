@@ -67,6 +67,7 @@
 		}
 
 		public function lancerQcm($idQcm) {
+			$bonus = 0 ;
 			$nomQcm = $this->modeleQcm->getNomQcm($idQcm);
 			include 'Vue/VueQcm.php';
 			$listeQuestions = $this->modeleQuestions->getQuestions($idQcm);
@@ -85,6 +86,15 @@
 					$numQuestion ++ ;
 				}
 			}
+			include 'Vue/VueQcmFin.php';
+		}
+
+		public function lancerQcmBonus($idQcm) {
+			$bonus = 1 ;
+			$nomQcm = $this->modeleQcm->getNomQcm($idQcm);
+			include 'Vue/VueQcm.php';
+			$listeQuestions = $this->modeleQuestions->getQuestions($idQcm);
+			$numQuestion =  1 ;
 			foreach ($listeQuestions as $question) {
 				if ($question->getBonus() == 1){
 					include 'Vue/VueQuestion.php';

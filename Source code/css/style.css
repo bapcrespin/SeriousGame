@@ -25,15 +25,15 @@
 	width: 100%;
 	background-color: transparent;
 	left: 65%;
-	z-index: 1;
+	z-index: 10;
 }
 
 .vertical {
   display: inline-block;
-  width: 40%;
+  width: 25%;
   height: 3%;
   margin-top: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 0%;
   -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
   transform: rotate(-90deg);
 }

@@ -11,54 +11,28 @@
 
 <div class="container">
 
-  <!--<div class="barreQCM">
-    <div class="progress vertical">
-      <div class='progress-bar progress-bar-success progress-bar-striped active' role='progressbar' style='width:30%'></div>
-    </div>
-  </div>-->
+  <?php
+    if ($bonus == 0) { 
+      echo '<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script> ';
+      echo '<script src="js/jquery.progressTimer.js"></script>  ';
 
+      echo '<div class="barreQCM">';
+      echo '<div class="progress vertical">';
+      echo '<div id="progressTimer"></div>';
+      echo '</div>';
+      echo '</div>';
 
-  <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script> 
-  <script src="js/jquery.progressTimer.js"></script>  
-
-  <div class="barreQCM">
-    <div class="progress vertical">
-      <div id="progressTimer"></div>
-    </div>
-  </div>
-
-  <script language="JavaScript">
-    $("#progressTimer").progressTimer({
-      timeLimit: 30,
-      warningThreshold: 10,
-      baseStyle: 'progress-bar-success',
-      warningStyle: 'progress-bar-danger',
-      completeStyle: 'progress-bar-danger',
-      onFinish: function() {
-          document.location.href="index.php";
-      }
-  });
-  </script>
-
-  <!--<script language="JavaScript">
-    duree="30";
-    t();
-  </script>
-
-  
-
-    <script language="JavaScript">
-      function t() {
-        var div=document.getElementById('compteur');
-        s=duree;
-        if(s <= 0) {
-          document.location.href="index.php";
-        }
-        else {
-         div.innerHTML = "<div class='progress-bar progress-bar-success progress-bar-striped active' role='progressbar' style='width:30%'></div>";
-        }
-        duree=duree-1;
-        window.setTimeout("t();",999);
-      }
-    </script>
-  -->
+      echo '<script language="JavaScript">';
+      echo '$("#progressTimer").progressTimer({';
+      echo 'timeLimit: 30,';
+      echo 'warningThreshold: 10,';
+      echo 'baseStyle: "progress-bar-success",';
+      echo 'warningStyle: "progress-bar-danger",';
+      echo 'completeStyle: "progress-bar-danger",';
+      echo 'onFinish: function() {';
+      echo '  document.location.href="index.php?entite=qcm&action=LB&id='.$idQcm.'"';
+      echo '}';
+      echo '});';
+      echo '</script>';
+    }
+  ?>
