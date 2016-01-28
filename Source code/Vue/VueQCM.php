@@ -17,7 +17,7 @@
         s=duree;
         m=0;h=0;
         if(s<0) {
-          compteur.innerHTML="terminé<br />"+"<a href=http://lien1.fr>continuer</a>"
+          document.location.href="index.php?entite=qcm&action=R";
         }
         else {
           if(s>59){
