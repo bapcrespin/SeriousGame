@@ -5,7 +5,7 @@
 	$res = $conn->prepare("Select * from Utilisateurs where mail = :pMail");
 	$res->execute(array('pMail' => $_POST['login']));
 	$uti = $res->fetch();
-	if ( isset($_POST['motPasse']) && ($uti["mdp"] == $_POST['motPasse'])){
+	if ( isset($_POST['motPasse']) && ($uti["mdp"] == $_POST['motPasse']) && ($_POST['motPasse'] <> NULL)){
 		session_start();
 		$_SESSION['id'] = $uti['mail'];
 		$_SESSION['mdp'] = $uti['mdp'];
