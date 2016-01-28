@@ -11,38 +11,28 @@
 
 <div class="container">
 
+  <div class="barreQCM" id="compteur">
+    <div class="progress vertical">
+        <script language="JavaScript">
+          duree="30";
+          t();
+        </script>
+      
+    </div>
+  </div>
+
+  
+
     <script language="JavaScript">
       function t() {
         var compteur=document.getElementById('compteur');
         s=duree;
-        m=0;h=0;
         if(s<0) {
-          document.location.href="index.php?entite=qcm&action=R";
-        }
+          document.location.href="index.php?entite=qcm&action=R";        }
         else {
-          if(s>59){
-            m=Math.floor(s/60);
-            s=s-m*60
-          }
-          if(m>59){
-            h=Math.floor(m/60);
-            m=m-h*60
-          }
-          if(s<10){
-            s="0"+s
-          }
-          if(m<10){
-            m="0"+m
-          }
-          compteur.innerHTML="Il reste : "+h+":"+m+":"+s
+          compteur.innerHTML='<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" style="width:'+duree/300+"></div>'
         }
         duree=duree-1;
         window.setTimeout("t();",999);
       }
     </script>
-    <div id="compteur"></div>
-    <script language="JavaScript">
-      duree="30";
-       t();
-    </script>
-
