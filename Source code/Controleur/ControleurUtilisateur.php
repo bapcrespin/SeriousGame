@@ -46,13 +46,11 @@ class ControleurUtilisateur {
                 $vCreerUti = $this->modeleUti->creerUtilisateur($mail, $mdp);
                 header('location:index.php');
             } else {
-                echo "<br/><h4>Les mots de passe de correspondent pas.</h4>";
+                echo '<div class="alert alert-danger" role="alert">Les mots de passe de correspondent pas.</div>';
             }
         } else {
-            echo "<br/><h4>L'adresse mail est invalide.</h4>";
+            echo '<div class="alert alert-danger" role="alert">L\'adresse mail est invalide.</div>';
         }
-        
-        
     }
 }
 ?>

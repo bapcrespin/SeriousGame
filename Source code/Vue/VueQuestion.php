@@ -7,23 +7,3 @@
         echo '</div>';
         echo '<div class="panel-body two-col">';
     ?>
-
-<!--
-
-                <div class="panel-footer">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <button type="button" class="btn btn-success btn-sm btn-block">
-                                <span class="fa fa-send"></span>Valider</button>
-                        </div>
-                        <div class="col-md-6">
-                            <button type="button" class="btn btn-primary btn-sm btn-block">
-                                Arrêter le QCM</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
--->
-

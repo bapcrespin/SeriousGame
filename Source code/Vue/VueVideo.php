@@ -10,14 +10,12 @@
 
     <div class="container">
 
-    <div>
-      <?php
-        echo '<object type="application/x-shockwave-flash" width="1135" height="650" data="http://www.youtube.com/v/'.$codeVideo.'&hl=fr">';
-        echo '<param name="movie" value="http://www.youtube.com/v/'.$codeVideo.'&hl=fr"/>';
-      ?>
-      <param name="wmode" value="transparent" />
-      <param name="allowFullScreen" value="true">
-      </object>
+    <div class=bs-example data-example-id=responsive-embed-16by9-iframe-youtube>
+      <div class="embed-responsive embed-responsive-16by9">
+        <?php
+          echo '<iframe class=embed-responsive-item src="//www.youtube.com/embed/'.$codeVideo.'?rel=0" allowfullscreen></iframe>';
+        ?>
+      </div>
     </div>
 
 	<div>
