@@ -102,5 +102,59 @@
 			include 'Vue/VueQcmFin.php';
 		}
 
+		public function resultatQcm($question1, $question2, $question3, $question4, $question5, $reponse1, $reponse2, $reponse3, $reponse4, $reponse5) {
+			// Traitement question 1
+			$idQ1 = $this->modeleQuestions->getIdQuestion($question1);
+			$listeReponseQuestion1 = $this->modeleReponse->getListeReponsesParQuestion($idQ1);
+			$r1 = 0;
+			foreach ($listeReponseQuestion1 as $value) {
+				if (($value.getName() == $reponse1) && ($value.isCorrect() == 1)) {
+					$r1 = 1;
+				}
+			}
+
+			// Traitement question 2
+			$idQ2 = $this->modeleQuestions->getIdQuestion($question2);
+			$listeReponseQuestion2 = $this->modeleReponse->getListeReponsesParQuestion($idQ2);
+			$r2 = 0;
+			foreach ($listeReponseQuestion2 as $value) {
+				if (($value.getName() == $reponse2) && ($value.isCorrect() == 1)) {
+					$r2 = 1;
+				}
+			}
+
+			// Traitement question 3
+			$idQ3 = $this->modeleQuestions->getIdQuestion($question3);
+			$listeReponseQuestion3 = $this->modeleReponse->getListeReponsesParQuestion($idQ3);
+			$r3 = 0;
+			foreach ($listeReponseQuestion3 as $value) {
+				if (($value.getName() == $reponse3) && ($value.isCorrect() == 1)) {
+					$r3 = 1;
+				}
+			}
+
+			// Traitement question 4
+			$idQ4 = $this->modeleQuestions->getIdQuestion($question4);
+			$listeReponseQuestion4 = $this->modeleReponse->getListeReponsesParQuestion($idQ4);
+			$r4 = 0;
+			foreach ($listeReponseQuestion4 as $value) {
+				if (($value.getName() == $reponse4) && ($value.isCorrect() == 1)) {
+					$r4 = 1;
+				}
+			}
+
+			// Traitement question 5
+			$idQ5 = $this->modeleQuestions->getIdQuestion($question5);
+			$listeReponseQuestion5 = $this->modeleReponse->getListeReponsesParQuestion($idQ5);
+			$r5 = 0;
+			foreach ($listeReponseQuestion5 as $value) {
+				if (($value.getName() == $reponse5) && ($value.isCorrect() == 1)) {
+					$r5 = 1;
+				}
+			}
+
+			include 'Vue/VueResultatQcm.php';
+		}
+
 	}
  ?>
