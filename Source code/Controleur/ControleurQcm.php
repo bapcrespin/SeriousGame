@@ -102,7 +102,7 @@
 			include 'Vue/VueQcmFin.php';
 		}
 
-		public function resultatQcm($question1, $question2, $question3, $question4, $question5, $reponse1, $reponse2, $reponse3, $reponse4, $reponse5) {
+		public function resultatQcm($question1, $question2, $question3, $question4, $question5, $questionBonus, $reponse1, $reponse2, $reponse3, $reponse4, $reponse5, $reponseBonus) {
 			// Traitement question 1
 			$idQ1 = $this->modeleQuestions->getIdQuestion($question1);
 			$listeReponseQuestion1 = $this->modeleReponse->getListeReponsesParQuestion($idQ1);
@@ -150,6 +150,16 @@
 			foreach ($listeReponseQuestion5 as $value) {
 				if (($value.getName() == $reponse5) && ($value.isCorrect() == 1)) {
 					$r5 = 1;
+				}
+			}
+
+			// Traitement question bonus
+			$idQBonus = $this->modeleQuestions->getIdQuestion($questionBonus);
+			$listeReponseQuestionBonus = $this->modeleReponse->getListeReponsesParQuestion($idQBonus);
+			$rBonus = 0;
+			foreach ($listeReponseQuestionBonus as $value) {
+				if (($value.getName() == $reponseBonus) && ($value.isCorrect() == 1)) {
+					$rBonus = 1;
 				}
 			}
 
