@@ -2,9 +2,11 @@
     <div class="jumbotron">
       <div class="container">
       </br></br>
+      <h1 style ="font-family:'Century Gothic';" >
         <?php
-          echo '<h1>Vidéo : '.$nomQcm.'</h1>';
+          echo 'Vidéo : '.$nomQcm;
         ?>
+      </h1>
       </div>
     </div>
 

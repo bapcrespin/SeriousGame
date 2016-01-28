@@ -3,9 +3,11 @@
     <div class="jumbotron">
       <div class="container">
       </br></br>
+      <h1 style ="font-family:'Century Gothic';" >
         <?php
-          echo '<h1>QCM : '.$nomQcm.'</h1>';
+          echo 'QCM : '.$nomQcm;
         ?>
+      </h1>      
       </div>
     </div>
 
