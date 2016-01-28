@@ -9,20 +9,16 @@
     </div>
 
     <div class="container">
-      <?php
-        echo '<p>Code Vidéo : '.$codeVideo.'</p>';
-      ?>
 
-     <div>
+    <div>
       <?php
-    		echo '<object type="application/x-shockwave-flash" width="1135" height="650" data="http://www.youtube.com/v/'.$codeVideo.'&hl=fr">';
-    		echo '<param name="movie" value="http://www.youtube.com/v/'.$codeVideo.'&hl=fr" />';
+        echo '<object type="application/x-shockwave-flash" width="1135" height="650" data="http://www.youtube.com/v/'.$codeVideo.'&hl=fr">';
+        echo '<param name="movie" value="http://www.youtube.com/v/'.$codeVideo.'&hl=fr"/>';
       ?>
-
-			<param name="wmode" value="transparent" />
-			<param name="allowFullScreen" value="true">
-		</object>
-	</div>
+      <param name="wmode" value="transparent" />
+      <param name="allowFullScreen" value="true">
+      </object>
+    </div>
 
 	<div>
 		<br/>

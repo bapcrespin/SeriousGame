@@ -69,6 +69,21 @@
 		public function lancerQcm($idQcm) {
 			$nomQcm = $this->modeleQcm->getNomQcm($idQcm);
 			include 'Vue/VueQcm.php';
+			$listeQuestions = $this->modeleQuestions->getQuestions($idQcm);
+			$numQuestion =  1 ;
+			foreach ($listeQuestions as $question) {
+				include 'Vue/VueQuestion.php';
+				$idQuestion = $this->modeleQuestions->getIdQuestion($question->getQuestion());
+				$listeReponses = $this->modeleReponse->getListeReponsesParQuestion($idQuestion);
+				$numReponse =  1 ;
+				foreach ($listeReponses as $reponse) {
+					include 'Vue/VueReponse.php';
+					$numReponse ++ ;
+				}
+				include 'Vue/VueQuestionFin.php';
+				$numQuestion ++ ;
+			}
+			//include 'Vue/VueQcm.php';
 		}
 
 	}

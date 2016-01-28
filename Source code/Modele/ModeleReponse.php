@@ -7,11 +7,14 @@
 		public function getListeReponsesParQuestion($pIdQuestion) {
 			global $conn;
 			$res = $conn->prepare("Select * from Reponses where idQuestion = :pIdQuestion");
-			$res->execute(array('pIdQuestion' => $pIdQuestion));
-			foreach ($res as $rep) {
-				$listeReponses[] = new Reponse($rep["idReponse"], $rep["idQuestion"], $rep["reponse"]);
+			$res->execute(array("pIdQuestion" => $pIdQuestion));
+			$listeReponses[] = null ;
+			$i = 0;
+			foreach ($res as $reponse) {
+				$listeReponses[$i] = new Reponse($reponse["idQuestion"], $reponse["reponse"]);
+				$i ++  ;
 			}
-			return $listeReponses;
+			return $listeReponses ;
 		}
 
 		public function getReponse($nom) {

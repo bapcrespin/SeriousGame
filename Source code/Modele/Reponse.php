@@ -6,10 +6,10 @@
 		private $correct;
 
 		public function __construct($pIdQuestion, $pReponse) {
-			$idReponse = null;
-			$idQuestion = $pIdQuestion;
-			$reponse = $pReponse;
-			$correct = 0;
+			$this->idReponse = null;
+			$this->idQuestion = $pIdQuestion;
+			$this->reponse = $pReponse;
+			$this->correct = 0;
 		}
 	
    
