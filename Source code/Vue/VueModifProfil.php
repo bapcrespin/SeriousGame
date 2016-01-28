@@ -26,7 +26,7 @@
    <div class="container">
     <h1>Modifier le profil </h1>
     <hr>
-  <div class="row">
+    <div class="row">
       <!-- left column -->
       <div class="col-md-3">
         <div class="text-center">
@@ -74,5 +74,3 @@
         </form>
       </div>
   </div>
-</div>
-<hr>
