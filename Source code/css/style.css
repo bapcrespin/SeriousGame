@@ -52,8 +52,9 @@
 }
 
 .starBonus{
-	font-size: 34px;
-	color: #0F2F80;
+	font-size: 32px;
+	color: #FF6919;
+	text-shadow: 2px 2px 3px black;
 }
 .panel-qq{
 	float: left;
@@ -102,4 +103,14 @@
 
 .mafonte3 {
 	font-family: "coolvetica";
+}.info-score{
+	position: absolute;
+	top: 0px;
+	right:0px;
+	color: #337AB7;
+	font-size: 40px;
+}
+
+.info-score:hover{
+	color: #337AB7;
 }
