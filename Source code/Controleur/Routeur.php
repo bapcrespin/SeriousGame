@@ -39,6 +39,7 @@ class Routeur {
 							break;
 					}
 				}
+				break;
 				case 'monde':
 					$ctrlUser = new ControleurUtilisateur();
 					$ctrlUser->voirMonde();
