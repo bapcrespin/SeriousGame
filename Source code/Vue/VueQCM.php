@@ -10,7 +10,7 @@
       </h1>      
       </div>
     </div>
-
+<form method="post" action="index.php?entite=qcm&action=R&id=1" >
 <div class="container">
 
   <?php

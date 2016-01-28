@@ -73,12 +73,17 @@ class Routeur {
 								break;
 							case 'LB':
 								if (isset($_GET['id'])) {
+									$_POST['reponse1'];
 									$ctrlQcm = new ControleurQcm();
 									$ctrlQcm->lancerQcmBonus($_GET['id']);
 								}
 								break;
 							case 'R':
-								include 'Vue/VueResultatQcm.php';
+								if (isset($_POST['envoyer'])) {
+									echo $_SESSION['reponse1'];
+									$ctrlQcm = new ControleurQcm();
+									$ctrlQcm->resultatQcm($_SESSION['question1'], $_SESSION['question2'], $_SESSION['question3'], $_SESSION['question4'], $_SESSION['question5'], $_SESSION['question6'], $_SESSION['reponse1'], $_SESSION['reponse2'], $_SESSION['reponse3'], $_SESSION['reponse4'], $_SESSION['reponse5'], $_SESSION['reponse6']);
+								}
 								break;
 						}
 					}

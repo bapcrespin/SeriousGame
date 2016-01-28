@@ -118,7 +118,7 @@
 			$listeReponseQuestion1 = $this->modeleReponse->getListeReponsesParQuestion($idQ1);
 			$r1 = 0;
 			foreach ($listeReponseQuestion1 as $value) {
-				if (($value.getName() == $reponse1) && ($value.isCorrect() == 1)) {
+				if (($value->getReponse() == $reponse1) && ($value->isCorrect() == 1)) {
 					$r1 = 1;
 				}
 			}
@@ -128,7 +128,7 @@
 			$listeReponseQuestion2 = $this->modeleReponse->getListeReponsesParQuestion($idQ2);
 			$r2 = 0;
 			foreach ($listeReponseQuestion2 as $value) {
-				if (($value.getName() == $reponse2) && ($value.isCorrect() == 1)) {
+				if (($value->getReponse() == $reponse2) && ($value->isCorrect() == 1)) {
 					$r2 = 1;
 				}
 			}
@@ -138,7 +138,7 @@
 			$listeReponseQuestion3 = $this->modeleReponse->getListeReponsesParQuestion($idQ3);
 			$r3 = 0;
 			foreach ($listeReponseQuestion3 as $value) {
-				if (($value.getName() == $reponse3) && ($value.isCorrect() == 1)) {
+				if (($value->getReponse() == $reponse3) && ($value->isCorrect() == 1)) {
 					$r3 = 1;
 				}
 			}
@@ -148,7 +148,7 @@
 			$listeReponseQuestion4 = $this->modeleReponse->getListeReponsesParQuestion($idQ4);
 			$r4 = 0;
 			foreach ($listeReponseQuestion4 as $value) {
-				if (($value.getName() == $reponse4) && ($value.isCorrect() == 1)) {
+				if (($value->getReponse() == $reponse4) && ($value->isCorrect() == 1)) {
 					$r4 = 1;
 				}
 			}
@@ -158,7 +158,7 @@
 			$listeReponseQuestion5 = $this->modeleReponse->getListeReponsesParQuestion($idQ5);
 			$r5 = 0;
 			foreach ($listeReponseQuestion5 as $value) {
-				if (($value.getName() == $reponse5) && ($value.isCorrect() == 1)) {
+				if (($value->getReponse() == $reponse5) && ($value->isCorrect() == 1)) {
 					$r5 = 1;
 				}
 			}
@@ -168,12 +168,23 @@
 			$listeReponseQuestionBonus = $this->modeleReponse->getListeReponsesParQuestion($idQBonus);
 			$rBonus = 0;
 			foreach ($listeReponseQuestionBonus as $value) {
-				if (($value.getName() == $reponseBonus) && ($value.isCorrect() == 1)) {
+				if (($value->getReponse() == $reponseBonus) && ($value->isCorrect() == 1)) {
 					$rBonus = 1;
 				}
 			}
 
 			include 'Vue/VueResultatQcm.php';
+			echo $reponse1;
+			/*foreach ($listeReponseQuestion1 as $value) {
+				if (($value->getReponse() == $reponse1)) {
+					echo $value->getReponse();
+					echo $reponse1;
+					if ($value->isCorrect() == 1) {
+						$r1 = 1;
+					}
+					
+				}
+			}*/
 		}
 
 	}

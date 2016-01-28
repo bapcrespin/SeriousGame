@@ -12,6 +12,8 @@
 			$i = 0;
 			foreach ($res as $reponse) {
 				$listeReponses[$i] = new Reponse($reponse["idQuestion"], $reponse["reponse"]);
+				$listeReponses[$i]->setIdReponse($reponse["idReponse"]);
+				$listeReponses[$i]->setCorrect($reponse["correct"]);
 				$i ++  ;
 			}
 			return $listeReponses ;
