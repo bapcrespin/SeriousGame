@@ -37,7 +37,7 @@
       echo'<p>'.$_SESSION['scoreTotal'].' points</p>';
       echo'</div>';
 ?>
-        <p><a href="index.php?entite=profil&action=U" class="btn btn-primary" role="button">Modifier le mot de passe</a> <a href="./parcours.php" class="btn btn-default" role="button">Jouer</a></p>
+        <p><a href="index.php?entite=profil&action=U" class="btn btn-primary" role="button">Modifier le mot de passe</a> <a href="./index.php?entite=monde" class="btn btn-default" role="button">Jouer</a></p>
       </div>
     </div>
   </div>
