@@ -73,16 +73,45 @@ class Routeur {
 								break;
 							case 'LB':
 								if (isset($_GET['id'])) {
-									$_POST['reponse1'];
+									// On stock les valeurs des radios buttons avec une variable global de session
+									if (!isset($_POST['reponse1'])) {
+										$_SESSION['reponse1'] = 1;
+									} else {
+										$_SESSION['reponse1'] = $_POST['reponse1'];
+									}
+									if (!isset($_POST['reponse2'])) {
+										$_SESSION['reponse2'] = 1;
+									} else {
+										$_SESSION['reponse2'] = $_POST['reponse2'];
+									}
+									if (!isset($_POST['reponse3'])) {
+										$_SESSION['reponse3'] = 1;
+									} else {
+										$_SESSION['reponse3'] = $_POST['reponse3'];
+									}
+									if (!isset($_POST['reponse4'])) {
+										$_SESSION['reponse4'] = 1;
+									} else {
+										$_SESSION['reponse4'] = $_POST['reponse4'];
+									}
+									if (!isset($_POST['reponse5'])) {
+										$_SESSION['reponse5'] = 1;
+									} else {
+										$_SESSION['reponse5'] = $_POST['reponse5'];
+									}
+									
+
 									$ctrlQcm = new ControleurQcm();
 									$ctrlQcm->lancerQcmBonus($_GET['id']);
 								}
 								break;
 							case 'R':
 								if (isset($_POST['envoyer'])) {
-									echo $_SESSION['reponse1'];
+									if (!isset($_POST['reponse6'])) {
+										$_POST['reponse6'] = 1;
+									}
 									$ctrlQcm = new ControleurQcm();
-									$ctrlQcm->resultatQcm($_SESSION['question1'], $_SESSION['question2'], $_SESSION['question3'], $_SESSION['question4'], $_SESSION['question5'], $_SESSION['question6'], $_SESSION['reponse1'], $_SESSION['reponse2'], $_SESSION['reponse3'], $_SESSION['reponse4'], $_SESSION['reponse5'], $_SESSION['reponse6']);
+									$ctrlQcm->resultatQcm($_SESSION['question1'], $_SESSION['question2'], $_SESSION['question3'], $_SESSION['question4'], $_SESSION['question5'], $_SESSION['question6'], $_SESSION['reponse1'], $_SESSION['reponse2'], $_SESSION['reponse3'], $_SESSION['reponse4'], $_SESSION['reponse5'], $_POST['reponse6']);
 								}
 								break;
 						}

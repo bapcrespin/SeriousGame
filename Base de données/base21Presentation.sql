@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 28 Janvier 2016 à 17:56
+-- Généré le :  Jeu 28 Janvier 2016 à 19:37
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -128,7 +128,7 @@ INSERT INTO `reponses` (`idReponse`, `idQuestion`, `reponse`, `correct`) VALUES
 (19, 5, 'L''école', 0),
 (20, 5, 'La famille', 0),
 (21, 6, 'Oui', 0),
-(22, 6, 'Non', 0);
+(22, 6, 'Non', 1);
 
 -- --------------------------------------------------------
 

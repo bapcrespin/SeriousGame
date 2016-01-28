@@ -174,17 +174,6 @@
 			}
 
 			include 'Vue/VueResultatQcm.php';
-			echo $reponse1;
-			/*foreach ($listeReponseQuestion1 as $value) {
-				if (($value->getReponse() == $reponse1)) {
-					echo $value->getReponse();
-					echo $reponse1;
-					if ($value->isCorrect() == 1) {
-						$r1 = 1;
-					}
-					
-				}
-			}*/
 		}
 
 	}

@@ -10,7 +10,14 @@
       </h1>      
       </div>
     </div>
-<form method="post" action="index.php?entite=qcm&action=R&id=1" >
+<?php 
+  if ($bonus == 0) {
+    echo '<form name="form1" method="post" action="index.php?entite=qcm&action=LB&id='.$idQcm.'">';
+  } else {
+    echo '<form method="post" action="index.php?entite=qcm&action=R&id='.$idQcm.'" >';
+  }
+ ?>
+
 <div class="container">
 
   <?php
@@ -32,7 +39,7 @@
       echo 'warningStyle: "progress-bar-danger",';
       echo 'completeStyle: "progress-bar-danger",';
       echo 'onFinish: function() {';
-      echo '  document.location.href="index.php?entite=qcm&action=LB&id='.$idQcm.'"';
+      echo '  document.form1.submit();';
       echo '}';
       echo '});';
       echo '</script>';

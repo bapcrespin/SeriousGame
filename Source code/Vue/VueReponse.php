@@ -6,7 +6,6 @@
         echo '<label><input type="radio" name ="reponse'.$numQuestion.'" value="'.$reponse->getReponse().'"> '.$numReponse.' - '.$reponse->getReponse().'</label>';
     } else {
         echo '<label><input type="radio" name ="reponse6" value="'.$reponse->getReponse().'"> '.$numReponse.' - '.$reponse->getReponse().'</label>';
-        $_SESSION['reponse6'] = $reponse->getReponse();
     }
     echo '</div>';
     echo '</div>';
