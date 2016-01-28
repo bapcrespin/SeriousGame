@@ -62,6 +62,9 @@ class Routeur {
 									$ctrlQcm->lancerQcm($_GET['id']);
 								}
 								break;
+							case 'R':
+								include 'Vue/VueResultatQcm.php';
+								break;
 						}
 					}
 					break;

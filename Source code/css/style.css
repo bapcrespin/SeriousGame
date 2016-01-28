@@ -37,8 +37,22 @@
   -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
   transform: rotate(-90deg);
 }
-
 .jumbotron {
 	position: relative;
 	z-index: 4;
+}
+.star{
+	font-size: 32px;
+	color: #FFBA0D;
+	text-shadow: 2px 2px 3px black;
+}
+
+.cent-text{
+	text-align: center;
+}
+
+.starBonus{
+	font-size: 34px;
+	color: #0F2F80;
+}
 }

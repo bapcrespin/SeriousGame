@@ -8,6 +8,8 @@
     <meta name="description" content="Serious Game">
     <meta name="author" content="IUT Blagnac">
     <link rel="icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
 
     <title>Serious Game</title>
 
@@ -57,4 +59,4 @@
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-    <!--<div class="marge"></div>-->
+    <div class="marge"></div>
