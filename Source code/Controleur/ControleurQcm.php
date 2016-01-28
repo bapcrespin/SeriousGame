@@ -83,7 +83,7 @@
 				include 'Vue/VueQuestionFin.php';
 				$numQuestion ++ ;
 			}
-			//include 'Vue/VueQcm.php';
+			include 'Vue/VueQcmFin.php';
 		}
 
 	}
