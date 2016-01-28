@@ -11,7 +11,7 @@
 			$listeQuestions[] = null ;
 			$i = 0;
 			foreach ($res as $question) {
-				$listeQuestions[$i] = new Questions($question["idQcm"], $question["question"]);
+				$listeQuestions[$i] = new Questions($question["idQcm"], $question["question"], $question["bonus"]);
 				$i ++  ;
 			}
 			return $listeQuestions ;

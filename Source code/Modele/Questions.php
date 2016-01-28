@@ -6,12 +6,12 @@ class Questions {
 	private $conteur;
     private $bonus;
 	
-	public function __construct($idQcm, $question) {
+	public function __construct($idQcm, $question, $bonus) {
         $this->idQuestion = null;
         $this->idQcm = $idQcm;
 		$this->question = $question;
 		$this->conteur = 0;
-        $this->bonus = 0;
+        $this->bonus = $bonus;
     }
 
     /**

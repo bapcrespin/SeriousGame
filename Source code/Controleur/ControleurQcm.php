@@ -72,16 +72,32 @@
 			$listeQuestions = $this->modeleQuestions->getQuestions($idQcm);
 			$numQuestion =  1 ;
 			foreach ($listeQuestions as $question) {
-				include 'Vue/VueQuestion.php';
-				$idQuestion = $this->modeleQuestions->getIdQuestion($question->getQuestion());
-				$listeReponses = $this->modeleReponse->getListeReponsesParQuestion($idQuestion);
-				$numReponse =  1 ;
-				foreach ($listeReponses as $reponse) {
-					include 'Vue/VueReponse.php';
-					$numReponse ++ ;
+				if ($question->getBonus() == 0){
+					include 'Vue/VueQuestion.php';
+					$idQuestion = $this->modeleQuestions->getIdQuestion($question->getQuestion());
+					$listeReponses = $this->modeleReponse->getListeReponsesParQuestion($idQuestion);
+					$numReponse =  1 ;
+					foreach ($listeReponses as $reponse) {
+						include 'Vue/VueReponse.php';
+						$numReponse ++ ;
+					}
+					include 'Vue/VueQuestionFin.php';
+					$numQuestion ++ ;
 				}
-				include 'Vue/VueQuestionFin.php';
-				$numQuestion ++ ;
+			}
+			foreach ($listeQuestions as $question) {
+				if ($question->getBonus() == 1){
+					include 'Vue/VueQuestion.php';
+					$idQuestion = $this->modeleQuestions->getIdQuestion($question->getQuestion());
+					$listeReponses = $this->modeleReponse->getListeReponsesParQuestion($idQuestion);
+					$numReponse =  1 ;
+					foreach ($listeReponses as $reponse) {
+						include 'Vue/VueReponse.php';
+						$numReponse ++ ;
+					}
+					include 'Vue/VueQuestionFin.php';
+					$numQuestion ++ ;
+				}
 			}
 			include 'Vue/VueQcmFin.php';
 		}
