@@ -39,6 +39,14 @@ class ControleurUtilisateur {
          include ('./Vue/VueProfil.php');
     }
 
+    public function voirMonde(){
+        include('./Vue/VueMonde.php');
+    }
+
+    public function voirParcours1(){
+        include('./Vue/VueParcours1.php');
+    }
+
     public function creerUtilisateur($mail, $mdp, $mdp2) {
         include ('./Vue/VueInscription.php');
         if (preg_match("*@*", $mail)) {

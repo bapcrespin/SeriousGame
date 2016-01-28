@@ -55,4 +55,51 @@
 	font-size: 34px;
 	color: #0F2F80;
 }
+.panel-qq{
+	float: left;
+}
+.panelViolet1{
+	color :#9C27B0;
+}
+
+.panelViolet2{
+	color :#E91E63;
+}
+
+.panelViolet3{
+	color :#673AB7;
+}
+
+.panelJaune{
+	color:#FFEB3B;
+}
+
+.panelVert{
+	color:#4CAF50;
+}
+
+.panelBleu{
+	color:#2196F3;
+}
+
+.panelOrange{
+	color:#FF9800;
+}
+
+@font-face {
+	font-family: "Wolf";
+	src:url('../fonts/sunshine.ttf');
+}
+
+.mafonte2 {
+	font-family: "Wolf";
+}
+
+@font-face {
+	font-family: "coolvetica";
+	src:url('../fonts/coolvetica.ttf');
+}
+
+.mafonte3 {
+	font-family: "coolvetica";
 }
