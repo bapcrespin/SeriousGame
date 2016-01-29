@@ -22,6 +22,12 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+DROP TABLE IF EXISTS JOUER;
+DROP TABLE IF EXISTS REPONSES;
+DROP TABLE IF EXISTS QUESTIONS;
+DROP TABLE IF EXISTS QCM;
+DROP TABLE IF EXISTS UTILISATEURS;
+
 --
 -- Structure de la table `jouer`
 --
