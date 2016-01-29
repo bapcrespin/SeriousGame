@@ -20,7 +20,7 @@
           <p>N’hésitez pas à envoyer vos remarques, questions, critiques ou suggestions sur le jeu.</p>
        </div>
         <div class="col-md-4">
-          <h2>Pour aller plus loins</h2>
+          <h2>Pour aller plus loin</h2>
           <p>Blog : professionnel de Monsieur Cuperty : <a href="http://www.esprod.fr">www.esprod.fr</a></p>
           <p>Chaîne Youtube avec les vidéos de S.E.S :  <a href="https://www.youtube.com/channel/UCK3pH3UwymnU96nfmU8m-AQ">https://www.youtube.com/channel/UCK3pH3UwymnU96nfmU8m-AQ</a></p>
           <p>Site des S.E.S de l’académie de Toulouse : <a href="http://automne-ses.ac-toulouse.fr/">http://automne-ses.ac-toulouse.fr/</a></p>
