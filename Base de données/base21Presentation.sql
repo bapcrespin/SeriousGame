@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `reponses` (
 
 INSERT INTO `reponses` (`idReponse`, `idQuestion`, `reponse`, `correct`) VALUES
 (1, 1, 'Oui', 1),
-(2, 1, 'Non', 1),
+(2, 1, 'Non', 0),
 (3, 1, 'Ca depend', 0),
 (4, 2, 'D’extériorisation des normes propres à une société', 0),
 (5, 2, 'D’extériorisation des normes et valeurs propres à une société', 0),
