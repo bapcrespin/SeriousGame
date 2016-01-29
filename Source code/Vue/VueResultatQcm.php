@@ -115,7 +115,9 @@ echo '</br><div class="input-group col-md-8 col-md-offset-2 alert alert-info" ro
   </br>
   </br> 
   </br>
-<button type="button" class="btn btn-warning col-md-2 col-md-offset-5 ">Réessayer</button>
+  <?php
+    echo '<a href="index.php?entite=qcm&action=L&id='.$_GET["id"].'"><button type="button" class="btn btn-warning col-md-2 col-md-offset-5 ">Réessayer</button></a>';
+  ?>
   </br>
   </br> 
 <div class="container">

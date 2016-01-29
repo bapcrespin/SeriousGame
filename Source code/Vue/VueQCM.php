@@ -33,7 +33,7 @@
 
       echo '<script language="JavaScript">';
       echo '$("#progressTimer").progressTimer({';
-      echo 'timeLimit: 30,';
+      echo 'timeLimit: 150,';
       echo 'warningThreshold: 10,';
       echo 'baseStyle: "progress-bar-success",';
       echo 'warningStyle: "progress-bar-danger",';

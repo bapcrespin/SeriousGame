@@ -2,16 +2,19 @@
 	include_once("./Modele/ModeleQCM.php");
 	include_once("./Modele/ModeleQuestions.php");
 	include_once("./Modele/ModeleReponse.php");
+	include_once('./Modele/ModeleUtilisateur.php');
 
 	class ControleurQcm {
 		private $modeleQcm;
 		private $modeleQuestions;
 		private $modeleReponse;
+		private $modeleUtilisateur;
 
 		public function __construct() {
 			$this->modeleQcm = new ModeleQcm();
 			$this->modeleQuestions = new ModeleQuestions();
 			$this->modeleReponse = new ModeleReponse();
+			$this->modeleUtilisateur = new ModeleUtilisateur();
 		}
 
 		public function ajouterQcm($niveauQcm, $tempsQcm, $urlQcm, $nomQcm, $nomQuestion, $reponse1, $reponse2, $reponse3, $reponse4, $reponse5, $idReponseJuste) {
@@ -174,6 +177,8 @@
 			}
 
 			include 'Vue/VueResultatQcm.php';
+			$_SESSION['scoreTotal'] += $score;
+			$this->modeleUtilisateur->modifScoreUtilisateur($_SESSION['id']);
 		}
 
 	}

@@ -36,7 +36,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <p><a class="navbar-brand white-text" href="index.php?entite=monde">Serious Game EsProd</a></p>
+          <p><a class="navbar-brand white-text" href="index.php"> Accueil</a><a class="navbar-brand white-text">|</a><a class="navbar-brand white-text" href="index.php?entite=monde">Les explorateurs des S.E.S</a></p>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" method="post" action="traitConnexion.php">

@@ -52,13 +52,17 @@ class ControleurUtilisateur {
         if (preg_match("*@*", $mail)) {
             if (strcmp($mdp, $mdp2) == 0 ){
                 $vCreerUti = $this->modeleUti->creerUtilisateur($mail, $mdp);
-                header('location:index.php');
+                echo '<div class="alert alert-success" role="alert">Inscription réussie.</div>';
             } else {
                 echo '<div class="alert alert-danger" role="alert">Les mots de passe de correspondent pas.</div>';
             }
         } else {
             echo '<div class="alert alert-danger" role="alert">L\'adresse mail est invalide.</div>';
         }
+    }
+
+    public function initScore($mail) {
+        return $this->modeleUti->getScore($mail);
     }
 }
 ?>

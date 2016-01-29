@@ -19,9 +19,19 @@ class ModeleUtilisateur {
 	public function getAvatar(){
 		return this.avatar;
 	}
-	
-	public function incrementerScoreTotal($score){
-		//this.scoreTotal = this.scoreTotal + $score ;
+
+	public function modifScoreUtilisateur($mail){
+		global $conn;
+		$res = $conn->prepare('Update Utilisateurs set scoreTotal ='.$_SESSION["scoreTotal"].' where mail = "'.$mail.'";');
+		$res->execute();
+	}
+
+	public function getScore($mail){
+		global $conn;
+		$res = $conn->prepare("Select * from Utilisateurs where mail = '".$mail."';");
+		$res->execute();
+		$uti = $res->fetch();
+		return $uti["scoreTotal"];
 	}
 	
 	public function getListeUtilisateurs() {
@@ -51,7 +61,6 @@ class ModeleUtilisateur {
 
     public function modifMdp($pmail, $pmdp) {
 	    global $conn;
-
 	    $res = $conn->prepare("Update Utilisateurs set mdp = '".$pmdp ."' where mail='".$pmail."';");
 	    $res->execute();
 	}
