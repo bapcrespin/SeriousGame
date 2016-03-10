@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
+    <link rel="stylesheet" type="text/css" href="./css/numero.css">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,21 +26,45 @@
       </div>
     </div>
     <div class="container">
-      
+      <?php
+        for($i = 1; $i<=$nbQCM; $i++){
+
+          echo('<a class="numero mafonte3" href= index.php?entite=qcm&action=V&id='.$i.'>');
+          
+          if($i <10){
+            echo ('0'.$i);
+          }else{
+            echo($i);
+          }
+          echo('</a>');
+          
+          if ($i != $nbQCM) {
+            echo(' <img class="fleche" src="images/arrow3.png">');
+          }
+          if ($i%5==0){
+            echo('</br>');
+            echo('</br>');
+            echo('<hr>');
+          }
+        }
+
+      ?>
+      <!--
       <a href= index.php?entite=qcm&action=V&id=1> <img src="images/1.1.png"> </a>
       <img src="images/arrow1.png">
-      <img src="images/1.2.png">
+      <a href= index.php?entite=qcm&action=V&id=2><img src="images/1.2.png"></a>
       <img src="images/arrow1.png">
-      <img src="images/1.3.png">
+      <a href= index.php?entite=qcm&action=V&id=3><img src="images/1.3.png"></a>
       <img src="images/arrow1.png">
-      <img src="images/1.4.png">
-    <!--
+      <a href= index.php?entite=qcm&action=V&id=4><img src="images/1.4.png"></a>
+    
       <img src="images/arrow2.png">
       <br/>
       <br/>
       <br/>
       <img src="images/1.5.png">
-      -->
+     
+      
       <br/>
       <br/>
       <br/>
@@ -56,5 +81,6 @@
       <div class='panelOrange panel-qq'> <div class ='mafonte3'><h4>Savoir-faire en S.E.S &nbsp</h4></div> </div> 
       <div class='panelJaune panel-qq'> <div class ='mafonte3'><h4>Sociologie &nbsp</h4></div> </div> 
     </div>
+     -->
   </div>
     <div class="container">

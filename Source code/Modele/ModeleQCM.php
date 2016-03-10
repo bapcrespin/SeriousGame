@@ -13,6 +13,15 @@ class ModeleQcm {
         return $unQCM;
     }
 
+    public function getMaxQCM(){
+        global $conn;
+        $res = $conn->prepare("Select COUNT(idQcm) as total from Qcm");
+        $res->execute();
+        $max = $res->fetch();
+        return intval($max['total']);
+
+
+    }
     public function getAllQcm() {
         global $conn;
         $res = $conn->prepare("Select * from Qcm");

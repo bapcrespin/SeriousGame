@@ -1,11 +1,16 @@
 <?php
 include_once("Modele/ModeleUtilisateur.php");
+include_once("Modele/ModeleQCM.php");
 class ControleurUtilisateur {
 	
     private $modeleUti;
+    private $modeleQCM;
+
 	
     public function __construct() {
           $this->modeleUti = new ModeleUtilisateur();
+          $this->modeleQCM = new ModeleQCM();
+
     }
 	
 	public function getListeUtilisateurs() {
@@ -44,6 +49,7 @@ class ControleurUtilisateur {
     }
 
     public function voirParcours1(){
+        $nbQCM = $this->modeleQCM->getMaxQCM();
         include('./Vue/VueParcours1.php');
     }
 

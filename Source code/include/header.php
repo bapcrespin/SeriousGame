@@ -44,6 +44,10 @@
               if(isset($_SESSION['identifie']) && ($_SESSION['identifie'] = 'OK')) {
                 echo '<a href="index.php?entite=profil&action=R"><button type="button" class="btn btn-info">Mon profil</button></a> &nbsp';
                 echo '<a href="deconnexion.php"><button type="button" class="btn btn-danger">Se déconnecter</button></a>';
+                 if($_SESSION['id'] == 'admin') {
+                  echo '&nbsp <a href="index.php?entite=qcm&action=C"><button type="button" class="btn btn-warning">Ajouter un QCM</button></a> &nbsp';
+                  echo '<a href="index.php?entite=question&action=C"><button type="button" class="btn btn-warning">Ajouter des Questions/Réponses</button></a> &nbsp';
+                 }
               } else {
                 echo '<div class="form-group">';
                 echo '  <input type="text" name="login" placeholder="Email" class="form-control"> &nbsp;';

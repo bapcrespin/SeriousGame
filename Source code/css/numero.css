@@ -1,0 +1,23 @@
+.numero {
+	background-color: green;
+	color:white;
+	border-radius: 15%;
+	width: 78px;
+	font-size: 68px;
+	padding-left: 24px;
+	padding-right: 24px;
+	text-align: center;
+
+}
+.numero:hover{
+	color : black;
+	text-decoration: none;
+}
+
+.fleche{
+	position: relative;
+	top : -20px;
+	margin-right: 20px;
+	margin-left: 20px;
+
+}
