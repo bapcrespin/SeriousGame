@@ -15,7 +15,7 @@ class ModeleQcm {
 
     public function getAllQcm() {
         global $conn;
-        $res = $conn->prepare("Select * from qcm");
+        $res = $conn->prepare("Select * from Qcm");
         $res->execute();
         $listeQcm = null;
         foreach ($res as $qcm) {
