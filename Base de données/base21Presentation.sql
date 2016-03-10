@@ -32,7 +32,7 @@ DROP TABLE IF EXISTS UTILISATEURS;
 -- Structure de la table `jouer`
 --
 
-CREATE TABLE IF NOT EXISTS `jouer` (
+CREATE TABLE IF NOT EXISTS `Jouer` (
   `mail` varchar(50) NOT NULL DEFAULT '',
   `idQcm` int(3) NOT NULL DEFAULT '0',
   `nbEssais` int(3) DEFAULT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `jouer` (
 -- Structure de la table `qcm`
 --
 
-CREATE TABLE IF NOT EXISTS `qcm` (
+CREATE TABLE IF NOT EXISTS `Qcm` (
   `idQcm` int(3) NOT NULL AUTO_INCREMENT,
   `niveau` int(1) NOT NULL,
   `temps` int(10) DEFAULT NULL,
@@ -71,7 +71,7 @@ INSERT INTO `qcm` (`idQcm`, `niveau`, `temps`, `valider`, `nom`, `url`) VALUES
 -- Structure de la table `questions`
 --
 
-CREATE TABLE IF NOT EXISTS `questions` (
+CREATE TABLE IF NOT EXISTS `Questions` (
   `idQuestion` int(3) NOT NULL AUTO_INCREMENT,
   `idQcm` int(3) DEFAULT NULL,
   `question` varchar(500) DEFAULT NULL,
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `questions` (
 -- Contenu de la table `questions`
 --
 
-INSERT INTO `questions` (`idQuestion`, `idQcm`, `question`, `conteur`, `bonus`) VALUES
+INSERT INTO `Questions` (`idQuestion`, `idQcm`, `question`, `conteur`, `bonus`) VALUES
 (1, 1, 'Répondez à la question posée en fin de vidéo : Peut-on dire que cet enfant a été socialisé ?', 0, 1),
 (2, 1, 'La socialisation est un processus :', 0, 0),
 (3, 1, 'Se brosser les dents est :', 0, 0),
@@ -99,7 +99,7 @@ INSERT INTO `questions` (`idQuestion`, `idQcm`, `question`, `conteur`, `bonus`) 
 -- Structure de la table `reponses`
 --
 
-CREATE TABLE IF NOT EXISTS `reponses` (
+CREATE TABLE IF NOT EXISTS `Reponses` (
   `idReponse` int(3) NOT NULL AUTO_INCREMENT,
   `idQuestion` int(3) NOT NULL,
   `reponse` varchar(500) DEFAULT NULL,
@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `reponses` (
 -- Contenu de la table `reponses`
 --
 
-INSERT INTO `reponses` (`idReponse`, `idQuestion`, `reponse`, `correct`) VALUES
+INSERT INTO `Reponses` (`idReponse`, `idQuestion`, `reponse`, `correct`) VALUES
 (1, 1, 'Oui', 1),
 (2, 1, 'Non', 0),
 (3, 1, 'Ca depend', 0),
@@ -142,7 +142,7 @@ INSERT INTO `reponses` (`idReponse`, `idQuestion`, `reponse`, `correct`) VALUES
 -- Structure de la table `utilisateurs`
 --
 
-CREATE TABLE IF NOT EXISTS `utilisateurs` (
+CREATE TABLE IF NOT EXISTS `Utilisateurs` (
   `mail` varchar(50) NOT NULL DEFAULT '',
   `mdp` varchar(20) DEFAULT NULL,
   `avatar` varchar(20) DEFAULT NULL,
@@ -157,20 +157,20 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
 --
 -- Contraintes pour la table `jouer`
 --
-ALTER TABLE `jouer`
+ALTER TABLE `Jouer`
   ADD CONSTRAINT `Jouer_ibfk_1` FOREIGN KEY (`mail`) REFERENCES `utilisateurs` (`mail`),
   ADD CONSTRAINT `Jouer_ibfk_2` FOREIGN KEY (`idQcm`) REFERENCES `qcm` (`idQcm`);
 
 --
 -- Contraintes pour la table `questions`
 --
-ALTER TABLE `questions`
+ALTER TABLE `Questions`
   ADD CONSTRAINT `Questions_ibfk_1` FOREIGN KEY (`idQcm`) REFERENCES `qcm` (`idQcm`);
 
 --
 -- Contraintes pour la table `reponses`
 --
-ALTER TABLE `reponses`
+ALTER TABLE `Reponses`
   ADD CONSTRAINT `Reponses_ibfk_1` FOREIGN KEY (`idQuestion`) REFERENCES `questions` (`idQuestion`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
