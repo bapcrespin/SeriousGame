@@ -53,6 +53,11 @@ class ControleurUtilisateur {
         include('./Vue/VueParcours1.php');
     }
 
+    public function voirParcours2() {
+        $nbQCM = $this->modeleQCM->getMaxQCM();
+        include('./Vue/VueParcours2.php');
+    }
+
     public function creerUtilisateur($mail, $mdp, $mdp2) {
         include ('./Vue/VueInscription.php');
         if (preg_match("*@*", $mail)) {
