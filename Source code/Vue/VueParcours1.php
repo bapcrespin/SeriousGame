@@ -27,9 +27,9 @@
     </div>
     <div class="container">
       <?php
+        $modeleQcm = new ModeleQcm();
         for($i = 1; $i<=$nbQCM; $i++){
-
-          echo('<a class="numero mafonte3" href= index.php?entite=qcm&action=V&id='.$i.'>');
+          echo('<a class="numero mafonte3" href= index.php?entite=qcm&action=V&id='.$i.' alt="'.$modeleQcm->getTitreQcm($i).'" title="'.$modeleQcm->getTitreQcm($i).'">');
           
           if($i <10){
             echo ('0'.$i);
