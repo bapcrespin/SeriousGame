@@ -4,7 +4,7 @@
     <div class="jumbotron">
       <div class="container">
       </br></br>
-        <h1>Choix des mondes</h1>     
+        <h1>Les mondes à explorer</h1>     
       </div>
     </div>
     <div class="container">
