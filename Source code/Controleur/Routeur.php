@@ -52,6 +52,14 @@ class Routeur {
 					$ctrlUser = new ControleurUtilisateur();
 					$ctrlUser->voirParcours2();
 					break;
+				case 'parcours3' :
+					$ctrlUser = new ControleurUtilisateur();
+					$ctrlUser->voirParcours3();
+					break;
+				case 'parcours4' :
+					$ctrlUser = new ControleurUtilisateur();
+					$ctrlUser->voirParcours4();
+					break;
 				case 'qcm':
 					if (isset($_GET['action'])) {
 						switch($_GET['action']) {

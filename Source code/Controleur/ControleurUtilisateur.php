@@ -58,6 +58,16 @@ class ControleurUtilisateur {
         include('./Vue/VueParcours2.php');
     }
 
+    public function voirParcours3() {
+        $nbQCM = $this->modeleQCM->getMaxQCM();
+        include('./Vue/VueParcours3.php');
+    }
+
+    public function voirParcours4() {
+        $nbQCM = $this->modeleQCM->getMaxQCM();
+        include('./Vue/VueParcours4.php');
+    }
+
     public function creerUtilisateur($mail, $mdp, $mdp2) {
         include ('./Vue/VueInscription.php');
         if (preg_match("*@*", $mail)) {
