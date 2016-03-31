@@ -17,6 +17,7 @@ Création d'un QCM...
     <option value="1">Niveau 1</option>
     <option value="2">Niveau 2</option>
     <option value="3">Niveau 3</option>
+    <option value="4">Niveau 4</option>
   </select>
   </div>
 </br>
