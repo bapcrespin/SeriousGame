@@ -73,5 +73,13 @@ class ModeleQcm {
             return $qcm['nom'];
         }
 
+    public function getNiveau($idQcm) {
+        global $conn;
+        $res = $conn->prepare("Select * from Qcm where idQcm = :pIdQcm");
+        $res->execute(array("pIdQcm" => $idQcm));
+        $qcm = $res->fetch();
+        return $qcm['niveau'];
+    }
+
 }
 ?>
