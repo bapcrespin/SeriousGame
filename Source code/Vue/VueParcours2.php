@@ -22,7 +22,7 @@
       <div class="container">
 
       </br></br>
-        <h1>Parcours des Secondes</h1>     
+        <h1>Parcours des Premières</h1>     
       </div>
     </div>
     <div class="container">
@@ -31,15 +31,14 @@
         $j = 1;
         $cpt = 0;
         for ($k = 1; $k <= $nbQCM; $k++) {
-          if ($modeleQcm->getNiveau($k) == 1) {
+          if ($modeleQcm->getNiveau($k) == 2) {
             $cpt++;
           }
         }
         for($i = 1; $i<=$nbQCM; $i++){
-          if ($modeleQcm->getNiveau($i) == 1) {
+          if ($modeleQcm->getNiveau($i) == 2) {
             echo('<a class="numero mafonte3" href= index.php?entite=qcm&action=V&id='.$i.' alt="'.$modeleQcm->getTitreQcm($i).'" title="'.$modeleQcm->getTitreQcm($i).'">');
-          
-            if($i <10){
+            if($j <10){
               echo ('0'.$j);
             }else{
               echo($j);
