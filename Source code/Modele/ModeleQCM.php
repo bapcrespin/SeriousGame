@@ -15,10 +15,10 @@ class ModeleQcm {
 
     public function getMaxQCM(){
         global $conn;
-        $res = $conn->prepare("Select COUNT(idQcm) as total from Qcm");
+        $res = $conn->prepare("Select idQcm as lastId from Qcm Order By idQcm Desc Limit 0,1");
         $res->execute();
         $max = $res->fetch();
-        return intval($max['total']);
+        return intval($max['lastId']);
 
 
     }
