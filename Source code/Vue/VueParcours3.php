@@ -25,6 +25,26 @@
         <h1>Parcours des Terminales</h1>     
       </div>
     </div>
+    <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary btn-lg center-block" data-toggle="modal" data-target="#myModal" name="bouttonListe">
+        Liste des QCM
+      </button>
+      </br>
+      <br>
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Liste des QCM</h4>
+            </div>
+            <div class="modal-body">
+              <img src="images/terminale.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
     <div class="container">
       <?php
         $modeleQcm = new ModeleQcm();

@@ -17,14 +17,36 @@
     <link href="../css/style.css" rel="stylesheet">
   </head>
 
+ 
+
 <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-
       </br></br>
-        <h1>Parcours des Secondes</h1>     
+        <h1>Parcours des Secondes</h1>    
       </div>
     </div>
+<!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary btn-lg center-block" data-toggle="modal" data-target="#myModal" name="bouttonListe">
+        Liste des QCM
+      </button>
+      </br>
+      <br>
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Liste des QCM</h4>
+            </div>
+            <div class="modal-body">
+              <img src="images/seconde.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
     <div class="container">
       <?php
         $modeleQcm = new ModeleQcm();
@@ -94,5 +116,7 @@
       <div class='panelJaune panel-qq'> <div class ='mafonte3'><h4>Sociologie &nbsp</h4></div> </div> 
     </div>
      -->
+
+
   </div>
     <div class="container">
