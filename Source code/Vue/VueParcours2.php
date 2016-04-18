@@ -26,9 +26,11 @@
       </div>
     </div>
     <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary btn-lg center-block" data-toggle="modal" data-target="#myModal" name="bouttonListe">
-        Liste des QCM
-      </button>
+      <div class="container">
+        <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal" id="bouttonListe">
+          Cliquez pour voir les titres des Vidéos-QCM
+        </button>
+      </div>
       </br>
       <br>
       <!-- Modal -->

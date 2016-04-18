@@ -36,8 +36,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <p><a class="navbar-brand white-text" href="index.php"> Accueil</a><a class="navbar-brand white-text">|</a><a class="navbar-brand white-text" href="index.php?entite=monde">Les explorateurs des S.E.S</a></p>
-        </div>
+            <a class="navbar-brand white-text" href="index.php"> Accueil</a>
+            <a class="navbar-brand white-text">|</a>
+            <div class="dropdown navbar-left">
+              <a id="drop1" class="dropdown-toggle navbar-brand white-text" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Les explorateurs des S.E.S <span class="caret"></span></a>
+              <ul id="dropdownmenu1" class="dropdown-menu" aria-labelledby="drop1">
+                <li><a href="index.php?entite=parcours1">Les Secondes</a></li>
+                <li><a href="index.php?entite=parcours2">Les Premières</a></li>
+                <li><a href="index.php?entite=parcours3">Les Terminales</a></li>
+                <li><a href="index.php?entite=parcours4">Le Bac</a></li>
+              </ul>
+            </div>
+          </div>
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" method="post" action="traitConnexion.php">
             <?php
