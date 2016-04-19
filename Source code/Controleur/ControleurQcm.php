@@ -182,7 +182,7 @@
 			include 'Vue/VueResultatQcm.php';
 			
 			// Traitement du score
-			if (isset($_SESSION['id']){
+			if (isset($_SESSION['id'])){
 				
 				$bestScore = $this->modeleJouer->getScoreQcm($_SESSION['id'], $idQcm);
 			
