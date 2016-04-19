@@ -182,15 +182,19 @@
 			include 'Vue/VueResultatQcm.php';
 			
 			// Traitement du score
-			$bestScore = $this->modeleJouer->getScoreQcm($_SESSION['id'], $idQcm);
+			if (isset($_SESSION['id']){
+				
+				$bestScore = $this->modeleJouer->getScoreQcm($_SESSION['id'], $idQcm);
 			
-			if (!isset($bestScore)) {
-				$this->modeleJouer->insererScore($_SESSION['id'], $idQcm, $score);
-			}else if ($score > $bestScore) {
-				$this->modeleJouer->modifierScore($_SESSION['id'], $idQcm, $score);
+				if (!isset($bestScore)) {
+					$this->modeleJouer->insererScore($_SESSION['id'], $idQcm, $score);
+				}else if ($score > $bestScore) {
+					$this->modeleJouer->modifierScore($_SESSION['id'], $idQcm, $score);
+				}
+				$this->modeleUtilisateur->calcScoreUtilisateur($_SESSION['id']);
+				$this->modeleUtilisateur->modifScoreUtilisateur($_SESSION['id']);
 			}
-			$this->modeleUtilisateur->calcScoreUtilisateur($_SESSION['id']);
-			$this->modeleUtilisateur->modifScoreUtilisateur($_SESSION['id']);
+			
 		}
 
 	}
