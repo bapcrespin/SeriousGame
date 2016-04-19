@@ -54,8 +54,9 @@ class ModeleUtilisateur {
     }
 
 	public function creerUtilisateur($mail, $mdp) {
+		$hashedMdp = sha1($mdp);
 		global $conn;
-		$res = $conn->prepare("INSERT INTO Utilisateurs VALUES('".$mail."', '".$mdp."','images/default.png',0)");
+		$res = $conn->prepare("INSERT INTO Utilisateurs VALUES('".$mail."', '".$hashedMdp."','images/default.png',0)");
 		$res->execute();
 	}
 	
