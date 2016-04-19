@@ -123,7 +123,7 @@ class Routeur {
 										$_POST['reponse6'] = 1;
 									}
 									$ctrlQcm = new ControleurQcm();
-									$ctrlQcm->resultatQcm($_SESSION['question1'], $_SESSION['question2'], $_SESSION['question3'], $_SESSION['question4'], $_SESSION['question5'], $_SESSION['question6'], $_SESSION['reponse1'], $_SESSION['reponse2'], $_SESSION['reponse3'], $_SESSION['reponse4'], $_SESSION['reponse5'], $_POST['reponse6']);
+									$ctrlQcm->resultatQcm($_GET['id'],$_SESSION['question1'], $_SESSION['question2'], $_SESSION['question3'], $_SESSION['question4'], $_SESSION['question5'], $_SESSION['question6'], $_SESSION['reponse1'], $_SESSION['reponse2'], $_SESSION['reponse3'], $_SESSION['reponse4'], $_SESSION['reponse5'], $_POST['reponse6']);
 								}
 								break;
 						}

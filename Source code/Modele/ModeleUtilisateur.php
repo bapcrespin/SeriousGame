@@ -25,6 +25,15 @@ class ModeleUtilisateur {
 		$res = $conn->prepare('Update Utilisateurs set scoreTotal ='.$_SESSION["scoreTotal"].' where mail = "'.$mail.'";');
 		$res->execute();
 	}
+	
+	public function calcScoreUtilisateur($mail){
+		global $conn;
+		$res = $conn->prepare("SELECT SUM(scoreQcm) FROM Jouer Where mail = '".$mail."';");
+		$res->execute();
+		$uti = $res->fetch();
+		$_SESSION["scoreTotal"]=$uti["SUM(scoreQcm)"];
+		return $uti["SUM(scoreQcm)"];
+	}
 
 	public function getScore($mail){
 		global $conn;

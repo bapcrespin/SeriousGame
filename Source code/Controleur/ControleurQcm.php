@@ -3,18 +3,21 @@
 	include_once("./Modele/ModeleQuestions.php");
 	include_once("./Modele/ModeleReponse.php");
 	include_once('./Modele/ModeleUtilisateur.php');
+	include_once('./Modele/ModeleJouer.php');
 
 	class ControleurQcm {
 		private $modeleQcm;
 		private $modeleQuestions;
 		private $modeleReponse;
 		private $modeleUtilisateur;
+		private $modeleJouer;
 
 		public function __construct() {
 			$this->modeleQcm = new ModeleQcm();
 			$this->modeleQuestions = new ModeleQuestions();
 			$this->modeleReponse = new ModeleReponse();
 			$this->modeleUtilisateur = new ModeleUtilisateur();
+			$this->modeleJouer = new ModeleJouer();
 		}
 
 		public function ajouterQcm($niveauQcm, $tempsQcm, $urlQcm, $nomQcm, $nomQuestion, $reponse1, $reponse2, $reponse3, $reponse4, $reponse5, $idReponseJuste) {
@@ -115,7 +118,7 @@
 			include 'Vue/VueQcmFin.php';
 		}
 
-		public function resultatQcm($question1, $question2, $question3, $question4, $question5, $questionBonus, $reponse1, $reponse2, $reponse3, $reponse4, $reponse5, $reponseBonus) {
+		public function resultatQcm($idQcm, $question1, $question2, $question3, $question4, $question5, $questionBonus, $reponse1, $reponse2, $reponse3, $reponse4, $reponse5, $reponseBonus) {
 			// Traitement question 1
 			$idQ1 = $this->modeleQuestions->getIdQuestion($question1);
 			$listeReponseQuestion1 = $this->modeleReponse->getListeReponsesParQuestion($idQ1);
@@ -177,7 +180,16 @@
 			}
 
 			include 'Vue/VueResultatQcm.php';
-			$_SESSION['scoreTotal'] += $score;
+			
+			// Traitement du score
+			$bestScore = $this->modeleJouer->getScoreQcm($_SESSION['id'], $idQcm);
+			
+			if (!isset($bestScore)) {
+				$this->modeleJouer->insererScore($_SESSION['id'], $idQcm, $score);
+			}else if ($score > $bestScore) {
+				$this->modeleJouer->modifierScore($_SESSION['id'], $idQcm, $score);
+			}
+			$this->modeleUtilisateur->calcScoreUtilisateur($_SESSION['id']);
 			$this->modeleUtilisateur->modifScoreUtilisateur($_SESSION['id']);
 		}
 
